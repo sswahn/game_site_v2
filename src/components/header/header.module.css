@@ -1,24 +1,101 @@
 
-.header {}
+.header {
+  border-bottom: 1px solid gray;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 40px;
+  width: 100%;
+}
+
+.header h1 a {
+  color: black;
+  font-weight: lighter;
+  text-decoration: none;
+}
+
+.header h1 a img {
+  width: 250px;
+  padding: 5px 0;
+}
 
 
 /* search form */
-.form {}
+.form {
+  position: relative;
+}
+
+.form input {
+  border: 1px solid gray;
+  border-radius: 20px;
+  margin-top: 9px;
+  padding: 5px 10px;
+}
+
+.form button {
+  background: gray;
+  border: 1px solid gray;
+  border-radius: 20px;
+  padding: 12px;
+  position: absolute;
+  right: 1px;
+  top: 10px;
+  width: 25px;
+}
 /* end search form */
 
 
-.nav {}
+.nav {
+  display: flex;
+}
 
+.header button {
+  background: none;
+  border: 0;
+}
 
 /* buttons */
 .games {}
+
 .login {}
+
 .cart {}
 
-.tooltip {}
-.tooltiptext {}
 
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
 
+.tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: var(--hover);
+  color: #fff;
+  font-size: 12px;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  top: 90%;
+  left: 50%;
+  margin-left: -60px;
+}
+
+.tooltiptext::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent var(--hover) transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
 /* end buttons */
 
 

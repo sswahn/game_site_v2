@@ -1,4 +1,4 @@
-import Search from './Search'
+import SearchForm from './SearchForm'
 import GamesButton from './GamesButton'
 import LoginButton from './LoginButton'
 import CartButton from './CartButton'
@@ -12,9 +12,9 @@ export default () => {
           <img src="" alt="logo" />
         </a>
       </h1>
-      <Search />
+      <SearchForm />
       <nav className={styles.nav}>
-        <GamesButton />
+        {/** <GamesButton /> */}
         <LoginButton />
         <CartButton />
       </nav>
