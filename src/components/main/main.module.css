@@ -1,7 +1,23 @@
 
 
-.main {}
+.main {
+  padding-top: 50px;
+}
 
-.list {}
+/* List */
+.list article {
+  background: #eee;
+  border-radius: 20px;
+  height: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  width: 1000px;
+}
+
+.list article header h2 {
+  font-weight: lighter;
+}
+
+/* End List */
 
 .list-item {}
