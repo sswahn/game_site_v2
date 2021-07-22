@@ -1,6 +1,7 @@
 
 :root {
-
+  --main-color: #0070ff;
+  --alt-color: #00308F;
 }
 
 * {
@@ -13,4 +14,8 @@
 html, body {
   height: 100%;
   width: 100%;
+}
+
+button {
+  cursor: pointer;
 }

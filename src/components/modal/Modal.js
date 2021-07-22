@@ -1,7 +1,7 @@
 import { useContext } from 'react'
 import { Context } from '../../Provider'
-//import Login from './Login'
-//import Cart from './Cart'
+import Login from '../login/Login'
+import Cart from '../cart/Cart'
 import styles from './modal.module.css'
 
 export default function Modal() {
@@ -14,9 +14,9 @@ export default function Modal() {
   const renderContent = () => {
     switch(context.modal) {
       case 'login':
-        //return <Login />
+        return <Login />
       case 'cart':
-       // return <Cart />
+       return <Cart />
       default:
         return
     }
@@ -29,6 +29,7 @@ export default function Modal() {
       <div>
         <button className={styles.button} onClick={close}>
           {/* fa times icon */}
+          x
         </button>
       </div>
       <div id="content" className={styles.content}>

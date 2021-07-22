@@ -20,7 +20,7 @@ export default () => {
 
   return (
     <main className={styles.main}>
-      {renderContent}
+      {renderContent()}
     </main>
   )
 }

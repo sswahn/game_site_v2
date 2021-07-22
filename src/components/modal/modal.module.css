@@ -1,6 +1,34 @@
 
-.modal {}
+.modal {
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  height: 100%;
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+}
 
-.button {}
+.button {
+  background: none;
+  border: 0;
+  color: #ccc;
+  cursor: pointer;
+  font-size: 38px;
+  position: absolute;
+  right: 40px;
+  top: 40px;
+  width: 60px;
+  z-index: 99999;
+}
 
-.content {}
+.button:hover {
+  color: white;
+}
+
+.content {
+  width: 100%;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}

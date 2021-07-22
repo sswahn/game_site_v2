@@ -7,8 +7,6 @@ export default function ModalMenu() {
   
   const openModal = () => {
     dispatch({ type: 'modal', payload: 'cart'})
-    const modal = document.getElementById('modal')
-    modal.style.display = 'block'
   }
 
   return (

@@ -14,7 +14,6 @@ export default () => {
 
   const openModal = event => {
     dispatch({ type: 'modal', payload: event.currentTarget.id })
-    document.getElementById('modal').style.display = 'block'
   }
 
   useEffect(() => {
@@ -26,10 +25,11 @@ export default () => {
       {state.session 
         ? <button id="upload" onClick={openModal}>
             {/* upload icon */}
+            <span className={styles.tooltiptext}>Upload</span>
           </button>
         : <button id="login" className={styles.tooltip} onClick={openModal}>
             {/* user icon circle */}
-            <span className={styles.tooltiptext}>User Login</span>
+            <span className={styles.tooltiptext}>Login</span>
           </button>
       }
     </div>
