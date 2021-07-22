@@ -2,7 +2,12 @@ export default [
   {
     id: "1",
     title: "The Great Gaias",
-    description: "A mysterious contract from the royal family sparks the interest of an organized band of sellswords. What seems like a normal job quickly spirals into a whirlwind of betrayal and tragedy, thrusting a young rogue and his unlikely companions into the middle of an ancient prophecy.",
+    description: {
+      short: "A mysterious contract from the royal family sparks the interest of an organized band of sellswords. What seems like a normal job quickly spirals into a whirlwind of betrayal and tragedy, thrusting a young rogue and his unlikely companions into the middle of an ancient prophecy.",
+      about: "paragraph about this game",
+      story: "paragraph of game's story description",
+      features: []
+    },
     logo: "https://d2rwgyv6d24c9f.cloudfront.net/the-great-gaias/the-great-gaias-title-screen.png",
     images: [
       "https://cdn.cloudflare.steamstatic.com/steam/apps/818610/ss_ec0196063ee211860204e388f4f70644d11e225b.1920x1080.jpg?t=1573517024",
