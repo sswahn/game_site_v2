@@ -1,7 +1,8 @@
 import { useContext } from 'react'
-import { Context } from '../Provider'
-import Login from './Login'
-import Cart from './Cart'
+import { Context } from '../../Provider'
+//import Login from './Login'
+//import Cart from './Cart'
+import styles from './modal.module.css'
 
 export default function Modal() {
   const [context, dispatch] = useContext(Context)
@@ -13,9 +14,9 @@ export default function Modal() {
   const renderContent = () => {
     switch(context.modal) {
       case 'login':
-        return <Login />
+        //return <Login />
       case 'cart':
-        return <Cart />
+       // return <Cart />
       default:
         return
     }

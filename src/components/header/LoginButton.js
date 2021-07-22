@@ -1,19 +1,29 @@
-import { useContext } from 'react'
+import { useContext, useState, useEffect } from 'react'
 import { Context } from '../../Provider'
+import cookie from '../../utilities/Cookies'
 import styles from './header.module.css'
 
 export default () => {
   const [context, dispatch] = useContext(Context)
-  
+  const [state, setState] = useState({ session: undefined })
+
+  const createSession = () => {
+    const token = cookie.get('token')
+    setState({ session: token })
+  }
+
   const openModal = event => {
     dispatch({ type: 'modal', payload: event.currentTarget.id })
-    const modal = document.getElementById('modal')
-    modal.style.display = 'block'
+    document.getElementById('modal').style.display = 'block'
   }
+
+  useEffect(() => {
+    createSession()
+  }, [state.session])
 
   return (
     <div className={styles.login}>
-      {context.authenticated 
+      {state.session 
         ? <button id="upload" onClick={openModal}>
             {/* upload icon */}
           </button>

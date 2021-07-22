@@ -3,7 +3,7 @@
   border-bottom: 1px solid gray;
   display: flex;
   justify-content: space-between;
-  padding: 0 40px;
+  padding: 5px 40px;
   width: 100%;
 }
 
@@ -19,16 +19,21 @@
 }
 
 
-/* search form */
+/* Search Form */
 .form {
   position: relative;
+  max-width: 800px;
+  width: 100%;
 }
 
 .form input {
   border: 1px solid gray;
   border-radius: 20px;
-  margin-top: 9px;
-  padding: 5px 10px;
+  font-size: 16px;
+  margin-top: 5px;
+  outline: none;
+  padding: 10px 20px;
+  width: 100%;
 }
 
 .form button {
@@ -41,7 +46,7 @@
   top: 10px;
   width: 25px;
 }
-/* end search form */
+/* End Search Form */
 
 
 .nav {
@@ -53,7 +58,7 @@
   border: 0;
 }
 
-/* buttons */
+/* Buttons */
 .games {}
 
 .login {}
@@ -96,7 +101,15 @@
 .tooltip:hover .tooltiptext {
   visibility: visible;
 }
-/* end buttons */
+/* End Buttons */
 
 
 .checkbox {}
+
+
+
+@media all and (max-width: 1000px) {
+  .header h1 {
+    margin-right: 40px;
+  }
+}
