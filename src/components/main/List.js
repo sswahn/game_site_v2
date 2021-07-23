@@ -1,6 +1,8 @@
 import { useContext, useState, useEffect } from 'react'
 import { Context } from '../../Provider'
 import server from '../../utilities/Server'
+import store from '../../utilities/Store'
+import SlideShow from './SlideShow'
 import styles from './main.module.css'
 import fake_data from './data'
 
@@ -10,12 +12,15 @@ export default () => {
 
   const loadData = async () => {
     // make request, return data in state
+
+    // use store
     setState({ data: fake_data })
   }
 
   const loadListItem = event => {
     dispatch({ type: 'list-item', payload: event.currentTarget.id })
   }
+
 
   useEffect(() => {
     loadData()
@@ -28,12 +33,10 @@ export default () => {
 
           <header className={styles.tooltip}>
             <h1>{game.title}</h1>
-            <time datetime="">{game.release_date}</time>
-            <img src={game.logo} alt={game.title} />
+            <time dateTime="">{game.release_date}</time>
+            <SlideShow images={game.images} />
             <p>{game.description.short}</p>
           </header>
-
-
           <div>
             <img src={game.logo} alt={game.title} />
           </div>
