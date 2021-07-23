@@ -20,7 +20,7 @@ export default [
       "Indie",
       "RPG"
     ],
-    operating_systems: [
+    platforms: [
       "Windows 7/8/10 (32bit/64bit)",
       "Mac OSX 10.10 or better"
     ],
@@ -57,7 +57,7 @@ export default [
     "Indie",
     "RPG"
   ],
-  operating_systems: [
+  platforms: [
     "Windows 7/8/10 (32bit/64bit)"
   ],
   developer: "Horizon's End",

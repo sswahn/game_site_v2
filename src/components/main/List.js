@@ -17,15 +17,20 @@ export default () => {
       return alert(response.error.message)
     }
     */
-   store.set('store', fake_data)
-    // use store
+    store.set('storage', fake_data)
     setState({ data: fake_data })
   }
 
-  const loadListItem = event => {
-    dispatch({ type: 'list-item', payload: event.currentTarget.id })
+  const filterByGenre = event => {
+    const type = event.target.id
+    const storage = store.get('storage')
+    const data = storage.filter(game => game.genre.includes(type))
+    setState({ data })
   }
 
+  const openListItem = event => {
+    dispatch({ type: 'list-item', payload: event.currentTarget.id })
+  }
 
   useEffect(() => {
     loadData()
@@ -33,15 +38,17 @@ export default () => {
 
   return (
     <div className={styles.list}>
-      {/* add loading icon spinner with ternary */}
-      {state.data.length && state.data.map(game =>
-        <article id={game.id} onClick={loadListItem}>
 
+      {/* add loading icon spinner with ternary */}
+
+      {state.data.length && state.data.map(game =>
+        <article key={game.id} id={game.id} onClick={openListItem}>
           <header className={styles.tooltip}>
             <h1>{game.title}</h1>
             <time dateTime="">{game.release_date}</time>
             <SlideShow images={game.images} />
             <p>{game.description.short}</p>
+            <div>{game.platforms}</div>
           </header>
           <div>
             <img src={game.logo} alt={game.title} />
@@ -50,7 +57,7 @@ export default () => {
             <img src={game.developer_logo} alt={game.develper} />
             <div>{game.price}</div>
             <div>Rating: {game.rating}</div>
-            <div>{game.genre.map(type => <button>{type}</button>)}</div>
+            <div>{game.genre.map(type => <button key={type} id={type} onClick={filterByGenre}>{type}</button>)}</div>
           </div>
         </article>
       )}
