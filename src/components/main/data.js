@@ -36,4 +36,40 @@ export default [
     price: "$19.99",
     rating: "Positive"
  },
+ {
+  id: "2",
+  title: "Gjallarhorn",
+  description: {
+    short: "Two years following the Second Great War, the Osirian Empire wrestles with finding a new ruler. While each faction sees a different future for their people, decisions are made by strength, not through ideals, and only the dead have seen the end of war.",
+    about: "paragraph about this game",
+    story: "paragraph of game's story description",
+    features: []
+  },
+  logo: "https://d2rwgyv6d24c9f.cloudfront.net/gjallarhorn/gjallarhorn-title-screen.png",
+  images: [
+    "https://cdn.akamai.steamstatic.com/steam/apps/1585400/ss_3b51e4bca2b4fb3a77a15452d45ce98ec8103fef.1920x1080.jpg?t=1626985888",
+    "https://cdn.akamai.steamstatic.com/steam/apps/1585400/ss_79de0442446bdd10d34e699cd4a3a09a6e5c38bf.1920x1080.jpg?t=1626985888",
+    "https://cdn.akamai.steamstatic.com/steam/apps/1585400/ss_88082dd73345d292dc2c777b14855c7f926451c3.600x338.jpg?t=1626985888"
+  ],
+  trailer: "",
+  genre: [
+    "Adventure",
+    "Indie",
+    "RPG"
+  ],
+  operating_systems: [
+    "Windows 7/8/10 (32bit/64bit)"
+  ],
+  developer: "Horizon's End",
+  developer_logo: "https://d2rwgyv6d24c9f.cloudfront.net/horizonsend-logo-white.png",
+  release_date: "Jun 22, 2022",
+  website: "https://horizonsend.com",
+  links: [
+    "https://www.facebook.com/horizonsendgaming",
+    "https://twitter.com/horizonsendinc",
+    "https://www.instagram.com/horizonsendgaming"
+  ],
+  price: "$29.99",
+  rating: "None"
+},
 ]

@@ -21,23 +21,27 @@ export default () => {
     loadData()
   }, [])
 
-  // figure out how to load from list to list-item
-  // prolly in main.js
-
   return (
     <div className={styles.list}>
-      {state.data.length && state.data.map(item =>
-        <article id={item.id} onClick={loadListItem}>
-          <header>
-            <h1>
-              <img src={item.logo} alt={item.title} />
-            </h1>
+      {state.data.length && state.data.map(game =>
+        <article id={game.id} onClick={loadListItem}>
+
+          <header className={styles.tooltip}>
+            <h1>{game.title}</h1>
+            <time datetime="">{game.release_date}</time>
+            <img src={game.logo} alt={game.title} />
+            <p>{game.description.short}</p>
           </header>
+
+
           <div>
-            <img src={item.developer_logo} alt={item.develper} />
-            <div>{item.price}</div>
-            <div>Rating: {item.rating}</div>
-            <div>{item.genre.map(type => <button>{type}</button>)}</div>
+            <img src={game.logo} alt={game.title} />
+          </div>
+          <div>
+            <img src={game.developer_logo} alt={game.develper} />
+            <div>{game.price}</div>
+            <div>Rating: {game.rating}</div>
+            <div>{game.genre.map(type => <button>{type}</button>)}</div>
           </div>
         </article>
       )}
@@ -46,6 +50,10 @@ export default () => {
 }
 
       /*
+
+
+
+
         <article id={item.id} onClick={loadListItem}>
           <header>
             <a href={`/game?v=${item.id}`}>

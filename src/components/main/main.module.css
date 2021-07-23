@@ -1,7 +1,7 @@
 
 
 .main {
-  padding-top: 50px;
+  padding-top: 40px;
 }
 
 /* List */
@@ -11,28 +11,95 @@
 
 .list article {
   cursor: pointer;
-  height: 500px;
-  margin: 0 auto;
+  margin: 0 auto 40px auto;
   max-width: 700px;
-  width: 100%;
-
-  border: 1px dashed red;
-}
-
-.list article h1,
-.list article h1 img {
+  position: relative;
   width: 100%;
 }
 
 .list article > div {
-  background: black;
+  background: #444;
+  padding: 5px;
   text-align: right;
+  overflow: hidden;
+  margin-top: -5px;
 }
 
-.list article > div img {
-  float: left;
-  width: 200px;
+.list article > div:first-of-type {
+  padding-bottom: 0;
 }
+
+.list article > div:first-of-type img {
+  width: 100%;
+}
+
+.list article > div:last-of-type img {
+  float: left;
+  max-width: 200px;
+  width: 100%;
+}
+
+.list article > div > div {
+  margin: 7px 5px 5px 0;
+}
+
+.list article > div > div:first-of-type {
+  font-weight: bold;
+}
+
+.list article > div > div button {
+  font-size: 12px;
+  margin: 5px 0 0 10px;
+  padding: 2px 4px;
+}
+
+.list article:hover .tooltip {
+  display: block;
+  opacity: 1;
+  transition: display 1s, opacity 1s linear;
+}
+
+.tooltip {
+  width: 120px;
+  background-color: gray;
+  color: #fff;
+  display: none;
+  font-size: 12px;
+  opacity: 0;
+  max-width: 450px;
+  padding: 10px 20px 20px;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 102%;
+  width: 100%;
+}
+
+.tooltip::after {
+  content: "";
+  position: absolute;
+  top: 10%;
+  right: 100%;
+  margin-top: -5px;
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent gray transparent transparent;
+}
+
+.tooltip img {
+  margin: 10px 0;
+  width: 100%;
+}
+
+.tooltip strong {
+  font-size: 16px;
+}
+
+.tooltip p {
+  font-size: 14px;
+}
+
+
 
 /*
 .list article header {
