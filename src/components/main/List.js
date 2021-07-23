@@ -21,13 +21,30 @@ export default () => {
     loadData()
   }, [])
 
+  // figure out how to load from list to list-item
+  // prolly in main.js
+
   return (
     <div className={styles.list}>
       {state.data.length && state.data.map(item =>
         <article id={item.id} onClick={loadListItem}>
           <header>
-            <h2>{item.title}</h2>
+            <a href={`/game?v=${item.id}`}>
+              <h1>{item.title}</h1>
+            </a>
+            <a href={`/game?v=${item.id}`}>
+              <img src={item.logo} alt={item.title} />
+            </a>
+            <p>{item.description.short}</p>
+            <div>Rating: {item.rating}</div>
+            <div>Release Date: {item.release_date}</div>
+            <div>Developer: {item.developer}</div>
+            <div>Genre: {item.genre.map(type => <button>{type}</button>)}</div>
           </header>
+          <div className={styles.content}>
+            <iframe width="550" height="315" src={item.trailer} controls="1"></iframe>
+            <button>Add to Cart</button>
+          </div>
         </article>
       )}
     </div>

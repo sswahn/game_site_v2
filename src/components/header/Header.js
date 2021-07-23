@@ -7,6 +7,7 @@ import styles from './header.module.css'
 
 export default () => 
   <header className={styles.header}>
+    {/* remove h1 and from css */}
     <h1>
       <a href="/">
         <img src="" alt="logo" />
