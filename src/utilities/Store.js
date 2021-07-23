@@ -1,13 +1,13 @@
 
 const Store = () => {
   const get = name => {
-    return JSON.parse(localStorage.getItem(name))
+    return JSON.parse(sessionStorage.getItem(name))
   }
   const set = (name, value) => {
-    JSON.stringify(localStorage.setItem(name, value))
+    sessionStorage.setItem(name, JSON.stringify(value))
   }
   const remove = name => {
-    localStorage.removeItem(name)
+    sessionStorage.removeItem(name)
   }
 
   return { get, set, remove }

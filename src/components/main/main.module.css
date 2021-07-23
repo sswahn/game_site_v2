@@ -102,14 +102,16 @@
 
 /* Slideshow container */
 .slideshow {
-  max-width: 1000px;
-  position: relative;
-  margin: auto;
+  margin: 5px 0;
 }
 
 /* Hide the images by default */
 .slides {
   display: none;
+}
+
+.slides img {
+  margin: 0;
 }
 
 .fade {

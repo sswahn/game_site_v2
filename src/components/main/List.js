@@ -11,8 +11,13 @@ export default () => {
   const [state, setState] = useState({ data: [] })
 
   const loadData = async () => {
-    // make request, return data in state
-
+    /* 
+    const response = await server.get(config.api.games)
+    if (response.error !== undefined) {
+      return alert(response.error.message)
+    }
+    */
+   store.set('store', fake_data)
     // use store
     setState({ data: fake_data })
   }
@@ -28,6 +33,7 @@ export default () => {
 
   return (
     <div className={styles.list}>
+      {/* add loading icon spinner with ternary */}
       {state.data.length && state.data.map(game =>
         <article id={game.id} onClick={loadListItem}>
 
