@@ -10,9 +10,10 @@ export default () => {
     event.preventDefault()
     const value = event.target.elements[0].value
     const storage = store.get('storage')
-    const titles = storage.filter(game => game.title.includes(value))
-    const developers = storage.filter(game => game.developers.includes(value))
-    dispatch({ type: 'search', payload: [...titles, ...developers] })
+    const data = storage.filter(game => game.title.includes(value) || game.developers.includes(value))
+    if (data.length) {
+      dispatch({ type: 'search', payload: data })
+    }
   }
 
   return (
