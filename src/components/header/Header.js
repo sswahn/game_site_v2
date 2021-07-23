@@ -1,5 +1,4 @@
 import SearchForm from './SearchForm'
-import GamesButton from './GamesButton'
 import LoginButton from './LoginButton'
 import CartButton from './CartButton'
 import SideBarButton from './SideBarButton'
@@ -15,7 +14,6 @@ export default () =>
     </h1>
     <SearchForm />
     <nav className={styles.nav}>
-      {/** <GamesButton /> */}
       <LoginButton />
       <CartButton />
       <SideBarButton />

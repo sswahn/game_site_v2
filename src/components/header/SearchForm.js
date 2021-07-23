@@ -8,19 +8,22 @@ export default () => {
 
   const search = event => {
     event.preventDefault()
-    const value = event.target.elements[0].value
+    const value = event.target.elements[0].value.toLowerCase()
     const storage = store.get('storage')
-    const data = storage.filter(game => game.title.includes(value) || game.developers.includes(value))
+    const data = storage.filter(game => 
+      game.title.toLowerCase().includes(value) || game.developer.toLowerCase().includes(value)
+    )
     if (data.length) {
       dispatch({ type: 'search', payload: data })
     }
   }
 
   return (
-    <form className={styles.form}>
-      <input type="search" placeholder="Search" onChange={search} />
+    <form className={styles.form} onSubmit={search}>
+      <input type="search" placeholder="Search" />
       <button type="submit">
         {/* search icon */}
+        go
       </button>
     </form>
   )

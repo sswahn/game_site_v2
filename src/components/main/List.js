@@ -18,7 +18,8 @@ export default () => {
     }
     */
     store.set('storage', fake_data)
-    setState({ data: fake_data })
+    const data = context.search ? context.search : fake_data
+    setState({ data })
   }
 
   const filterByGenre = event => {
@@ -34,7 +35,7 @@ export default () => {
 
   useEffect(() => {
     loadData()
-  }, [])
+  }, [context.search])
 
   return (
     <div className={styles.list}>
