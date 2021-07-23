@@ -6,25 +6,20 @@ export default ({ images }) => {
 
   const slideShow = () => {
     const slides = document.getElementById('slideshow').children
+
+    if (state.index !== 0) {
+      slides[state.index - 1].style.display = 'none'
+    }
     
-    console.log('index: ', state.index)
-
-
-    // what is the problem
-    // problem is need to hide last image
-    // then show next image
-
-    //slides[state.index].style.display = 'none'
-    
-    if (state.index >= slides.length) {
+    if (state.index > slides.length - 1) {
       return setState({ ...state, index: 0 })
-    } 
+    }
     slides[state.index].style.display = 'block'
     setState({ ...state, index: state.index + 1 })
   }
 
   useEffect(() => {
-    //setTimeout(slideShow, 2000)
+    setTimeout(slideShow, 2000)
   }, [state.index])
 
   return (
