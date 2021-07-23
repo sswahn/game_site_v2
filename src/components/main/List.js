@@ -29,6 +29,25 @@ export default () => {
       {state.data.length && state.data.map(item =>
         <article id={item.id} onClick={loadListItem}>
           <header>
+            <h1>
+              <img src={item.logo} alt={item.title} />
+            </h1>
+          </header>
+          <div>
+            <img src={item.developer_logo} alt={item.develper} />
+            <div>{item.price}</div>
+            <div>Rating: {item.rating}</div>
+            <div>{item.genre.map(type => <button>{type}</button>)}</div>
+          </div>
+        </article>
+      )}
+    </div>
+  )
+}
+
+      /*
+        <article id={item.id} onClick={loadListItem}>
+          <header>
             <a href={`/game?v=${item.id}`}>
               <h1>{item.title}</h1>
             </a>
@@ -46,7 +65,4 @@ export default () => {
             <button>Add to Cart</button>
           </div>
         </article>
-      )}
-    </div>
-  )
-}
+      */

@@ -10,13 +10,31 @@
 }
 
 .list article {
-  background: #eee;
+  cursor: pointer;
   height: 500px;
   margin: 0 auto;
-  max-width: 950px;
+  max-width: 700px;
+  width: 100%;
+
+  border: 1px dashed red;
+}
+
+.list article h1,
+.list article h1 img {
   width: 100%;
 }
 
+.list article > div {
+  background: black;
+  text-align: right;
+}
+
+.list article > div img {
+  float: left;
+  width: 200px;
+}
+
+/*
 .list article header {
   float: left;
   margin-right: 10px;
@@ -77,6 +95,9 @@
 .content button:hover {
   background: lightgreen;
 }
+*/
+
+
 /* End List */
 
 .list-item {}

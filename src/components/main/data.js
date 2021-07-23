@@ -8,7 +8,7 @@ export default [
       story: "paragraph of game's story description",
       features: []
     },
-    logo: "https://cdn.cloudflare.steamstatic.com/steam/apps/818610/header.jpg?t=1573517024",
+    logo: "https://d2rwgyv6d24c9f.cloudfront.net/the-great-gaias/the-great-gaias-title-screen.png",
     images: [
       "https://cdn.cloudflare.steamstatic.com/steam/apps/818610/ss_ec0196063ee211860204e388f4f70644d11e225b.1920x1080.jpg?t=1573517024",
       "https://cdn.cloudflare.steamstatic.com/steam/apps/818610/ss_8056491b3b05e7c3f40d1aaba3441a8cf556ef27.1920x1080.jpg?t=1573517024",
@@ -25,6 +25,7 @@ export default [
       "Mac OSX 10.10 or better"
     ],
     developer: "Horizon's End",
+    developer_logo: "https://d2rwgyv6d24c9f.cloudfront.net/horizonsend-logo-white.png",
     release_date: "Jun 22, 2018",
     website: "https://horizonsend.com",
     links: [
