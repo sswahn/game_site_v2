@@ -4,7 +4,10 @@
   display: flex;
   justify-content: space-between;
   padding: 5px 40px;
+  position: fixed;
+  top: 0;
   width: 100%;
+  z-index: 9999;
 }
 
 .header h1 a {
