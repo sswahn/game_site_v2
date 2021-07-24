@@ -37,7 +37,7 @@ export default () => {
   }
 
   const setHoverState = () => {
-    // buggy when hovering over tooltip
+    // buggy when hovering over tooltip?
     setState({ ...state, hover_state: !state.hover_state })
   }
 
@@ -47,7 +47,7 @@ export default () => {
 
   return (
     <div className={styles.list}>
-{console.log('state: ', state)}
+
       {/* add loading icon spinner with ternary */}
 
       {state.data.length && state.data.map(game =>
@@ -55,8 +55,9 @@ export default () => {
           <header className={styles.tooltip}>
             <h1>{game.title}</h1>
             <time dateTime="">{game.release_date}</time>
-            {state.hover_state && <SlideShow images={game.images} isHovering={state.hover_state} />}
+            {state.hover_state ? <SlideShow images={game.images} isHovering={state.hover_state} /> : <></>}
             <p>{game.description.short}</p>
+            {/* use platform icons instead of text */}
             <div>{game.platforms}</div>
           </header>
           <div>

@@ -28,7 +28,7 @@ export default () => {
             <span className={styles.tooltiptext}>Upload</span>
           </button>
         : <button id="login" className={styles.tooltip} onClick={openModal}>
-            {/* user icon circle */}
+            <span role="img" aria-label="user">&#128100;</span>
             <span className={styles.tooltiptext}>Login</span>
           </button>
       }

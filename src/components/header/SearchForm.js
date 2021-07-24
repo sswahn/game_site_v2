@@ -23,7 +23,7 @@ export default () => {
       <input type="search" placeholder="Search" />
       <button type="submit">
         {/* search icon */}
-        go
+        <span>⌕</span>
       </button>
     </form>
   )

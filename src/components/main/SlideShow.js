@@ -5,11 +5,9 @@ export default ({ images, isHovering }) => {
   const [state, setState] = useState({ index: 0 })
 
   const slideShow = async () => {
-    console.log('isHovering', isHovering)
     if (!isHovering) {
       return
     }
-    console.log('inside slideShow')
     const slides = document.getElementById('slideshow').children
     if (state.index !== 0) {
       slides[state.index - 1].style.display = 'none'
@@ -24,7 +22,6 @@ export default ({ images, isHovering }) => {
   }
 
   useEffect(() => {
-      console.log('useEffect')
       slideShow()
   }, [state.index])
 

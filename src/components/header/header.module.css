@@ -24,8 +24,10 @@
 
 /* Search Form */
 .form {
+  display: flex;
+  height: 40px;
   position: relative;
-  margin: 0 40px;
+  margin: 5px 40px 0 40px;
   max-width: 800px;
   width: 100%;
 }
@@ -33,14 +35,15 @@
 .form input {
   background: #666;
   border: 1px solid gray;
-  border-radius: 20px;
+  border-right: 0;
+  border-radius: 20px 0 0 20px;
   color: white;
   font-size: 16px;
-  margin-top: 5px;
   outline: none;
   padding: 10px 20px;
   width: 100%;
 }
+
 .form input::placeholder {
   color: white;
 }
@@ -50,15 +53,25 @@
 }
 
 .form button {
-  background: gray;
+  background: #666;
   border: 1px solid gray;
-  border-radius: 20px;
-  padding: 12px;
-  position: absolute;
-  right: 1px;
-  top: 10px;
-  width: 25px;
+  border-radius: 0 20px 20px 0;
+  color: white;
+  font-size: 26px;
+  position: relative;
+  width: 50px;
 }
+
+.form button:hover {
+  background: #777;
+}
+
+.form button span {
+  position: absolute;
+  bottom: -5px;
+  right: 15px;
+}
+
 /* End Search Form */
 
 
@@ -66,18 +79,14 @@
   display: flex;
 }
 
-.header button {
-  background: none;
-  border: 0;
-}
-
 /* Buttons */
 .games {}
 
 .login button,
 .cart button {
+  background: #444;
   border: 1px dashed red;
-  color: black;
+  color: white;
   width: 50px;
   height: 50px;
 }
@@ -90,7 +99,7 @@
 .tooltiptext {
   visibility: hidden;
   width: 120px;
-  background-color: blue;
+  background-color: #666;
   color: #fff;
   font-size: 12px;
   text-align: center;
@@ -111,7 +120,7 @@
   margin-left: -5px;
   border-width: 5px;
   border-style: solid;
-  border-color: transparent transparent blue transparent;
+  border-color: transparent transparent #666 transparent;
 }
 
 .tooltip:hover .tooltiptext {
@@ -119,10 +128,7 @@
 }
 /* End Buttons */
 
-
 .checkbox {}
-
-
 
 @media all and (max-width: 500px) {
   .form {

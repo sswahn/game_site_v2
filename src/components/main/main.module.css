@@ -102,7 +102,10 @@
 
 /* Slideshow container */
 .slideshow {
+  background: black;
+  height: 230px;
   margin: 5px 0;
+  overflow: hidden;
 }
 
 /* Hide the images by default */

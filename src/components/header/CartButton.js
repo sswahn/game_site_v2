@@ -12,7 +12,7 @@ export default function ModalMenu() {
   return (
     <div className={styles.cart}>
       <button className={styles.tooltip} onClick={openModal}>
-        {/* shopping cart icon */}
+        <span role="img" aria-label="cart">&#128722;</span>
         <span className={styles.tooltiptext}>Cart</span>
       </button>
     </div>
