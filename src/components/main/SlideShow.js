@@ -1,10 +1,12 @@
-import { useState, useEffect } from 'react'
+import { useContext, useState, useEffect } from 'react'
+import { Context } from '../../Provider'
 import styles from './main.module.css'
 
 export default ({ images }) => {
+  const [context, dispatch] = useContext(Context)
   const [state, setState] = useState({ index: 0 })
 
-  const slideShow = () => {
+  const slideShow = async() => {
     const slides = document.getElementById('slideshow').children
     if (state.index !== 0) {
       slides[state.index - 1].style.display = 'none'
@@ -14,11 +16,13 @@ export default ({ images }) => {
       return setState({ ...state, index: 0 })
     }
     slides[state.index].style.display = 'block'
+    await new Promise(resolve => setTimeout(resolve, 2500))
     setState({ ...state, index: state.index + 1 })
   }
 
   useEffect(() => {
-    setTimeout(slideShow, 2000)
+    // this should fire only on hover
+    slideShow()
   }, [state.index])
 
   return (
