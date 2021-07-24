@@ -2,6 +2,8 @@ import { useContext } from 'react'
 import { Context } from '../../Provider'
 import store from '../../utilities/Store'
 import styles from './header.module.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSearch } from '@fortawesome/free-solid-svg-icons'
 
 export default () => {
   const [context, dispatch] = useContext(Context)
@@ -22,8 +24,7 @@ export default () => {
     <form className={styles.form} onSubmit={search}>
       <input type="search" placeholder="Search" />
       <button type="submit">
-        {/* search icon */}
-        <span>⌕</span>
+        <FontAwesomeIcon icon={faSearch} />
       </button>
     </form>
   )

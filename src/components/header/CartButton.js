@@ -1,6 +1,8 @@
 import { useContext } from 'react'
 import { Context } from '../../Provider'
 import styles from './header.module.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 
 export default function ModalMenu() {
   const [context, dispatch] = useContext(Context)
@@ -12,7 +14,7 @@ export default function ModalMenu() {
   return (
     <div className={styles.cart}>
       <button className={styles.tooltip} onClick={openModal}>
-        <span role="img" aria-label="cart">&#128722;</span>
+        <FontAwesomeIcon icon={faShoppingCart} />
         <span className={styles.tooltiptext}>Cart</span>
       </button>
     </div>

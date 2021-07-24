@@ -3,7 +3,7 @@
   background: #444;
   display: flex;
   justify-content: space-between;
-  padding: 5px 40px;
+  padding: 0 40px;
   position: fixed;
   top: 0;
   width: 100%;
@@ -21,13 +21,12 @@
   padding: 5px 0;
 }
 
-
 /* Search Form */
 .form {
   display: flex;
   height: 40px;
   position: relative;
-  margin: 5px 40px 0 40px;
+  margin: 10px 40px 0 95px;
   max-width: 800px;
   width: 100%;
 }
@@ -57,19 +56,11 @@
   border: 1px solid gray;
   border-radius: 0 20px 20px 0;
   color: white;
-  font-size: 26px;
-  position: relative;
   width: 50px;
 }
 
 .form button:hover {
   background: #777;
-}
-
-.form button span {
-  position: absolute;
-  bottom: -5px;
-  right: 15px;
 }
 
 /* End Search Form */
@@ -85,10 +76,10 @@
 .login button,
 .cart button {
   background: #444;
-  border: 1px dashed red;
+  border: 0;
   color: white;
-  width: 50px;
-  height: 50px;
+  font-size: 28px;
+  padding: 14px;
 }
 
 .tooltip {
@@ -129,6 +120,9 @@
 /* End Buttons */
 
 .checkbox {}
+
+
+@media all and (max-width: 1000px) {}
 
 @media all and (max-width: 500px) {
   .form {

@@ -5,6 +5,9 @@ import store from '../../utilities/Store'
 import SlideShow from './SlideShow'
 import styles from './main.module.css'
 import fake_data from './data'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSpinner } from '@fortawesome/free-solid-svg-icons'
+import { faSpin } from '@fortawesome/free-solid-svg-icons'
 
 export default () => {
   const [context, dispatch] = useContext(Context)
@@ -50,7 +53,7 @@ export default () => {
 
       {/* add loading icon spinner with ternary */}
 
-      {state.data.length && state.data.map(game =>
+      {!state.data.length ? <FontAwesomeIcon className="loading-icon" icon={faSpinner} /> : state.data.map(game =>
         <article key={game.id} id={game.id} onClick={openListItem} onMouseOver={setHoverState} onMouseOut={setHoverState}>
           <header className={styles.tooltip}>
             <h1>{game.title}</h1>
@@ -60,14 +63,18 @@ export default () => {
             {/* use platform icons instead of text */}
             <div>{game.platforms}</div>
           </header>
-          <div>
+          <div className={styles.logo}>
             <img src={game.logo} alt={game.title} />
           </div>
-          <div>
-            <img src={game.developer_logo} alt={game.develper} />
-            <div>{game.price}</div>
-            <div>Rating: {game.rating}</div>
-            <div>{game.genre.map(type => <button key={type} id={type} onClick={filterByGenre}>{type}</button>)}</div>
+          <div className={styles.meta}>
+            <div>
+              <img src={game.developer_logo} alt={game.develper} />
+            </div>
+            <div>
+              <p>{game.price}</p>
+              <p>Rating: <span>{game.rating}</span></p>
+              <div>{game.genre.map(type => <button key={type} id={type} onClick={filterByGenre}>{type}</button>)}</div>
+            </div>
           </div>
         </article>
       )}
@@ -76,9 +83,6 @@ export default () => {
 }
 
       /*
-
-
-
 
         <article id={item.id} onClick={loadListItem}>
           <header>

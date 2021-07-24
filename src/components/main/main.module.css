@@ -1,7 +1,7 @@
 
 
 .main {
-  padding-top: 120px;
+  padding-top: 110px;
 }
 
 /* List */
@@ -17,40 +17,54 @@
   width: 100%;
 }
 
-.list article > div {
-  background: #444;
-  padding: 5px;
-  text-align: right;
-  overflow: hidden;
-  margin-top: -5px;
-}
-
-.list article > div:first-of-type {
-  padding-bottom: 0;
-}
-
-.list article > div:first-of-type img {
+.logo img {
   width: 100%;
 }
 
-.list article > div:last-of-type img {
-  float: left;
+.meta {
+  background: #444;
+  display: flex;
+  justify-content: space-between;
+  margin: -3px 5px 5px 0;
+  overflow: hidden;
+  text-align: right;
+  width: 100%;
+}
+
+/* devloper logo wrapper */
+.meta > div:first-of-type {
+  padding: 0 0 0 5px;
+}
+
+.meta img {
   max-width: 200px;
   width: 100%;
 }
 
-.list article > div > div {
-  margin: 7px 5px 5px 0;
+.meta > div:last-child {
+  padding: 12px 10px 0 0;
 }
 
-.list article > div > div:first-of-type {
+.meta p:first-of-type {
   font-weight: bold;
+  padding: 0 0 5px 0;
 }
 
-.list article > div > div button {
+.meta p {
+  padding: 0 0 10px 0;
+}
+
+.meta button {
+  background: #222;
+  border: 0;
+  color: white;
   font-size: 12px;
-  margin: 5px 0 0 10px;
-  padding: 2px 4px;
+  margin: 0 0 0 5px;
+  padding: 3px 6px;
+}
+
+.meta button:hover {
+  background: #666;
 }
 
 .list article:hover .tooltip {
@@ -136,15 +150,18 @@
 
 
 
+@media all and (max-width: 500px) {
+
+  .list {
+    padding: 0 20px
+  }
+
+  .list article > div:last-of-type img {
+    max-width: 150px;
+  }
 
 
-
-
-
-
-
-
-
+}
 
 
 
