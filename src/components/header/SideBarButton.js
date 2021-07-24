@@ -5,14 +5,10 @@ import { faBars } from '@fortawesome/free-solid-svg-icons'
 export default () => {
 
   const toggleSideBar = event => {
-    const sidebar = document.getElementById("sidebar")
-    if (sidebar.style.width === '250px') {
-      sidebar.style.width = '0px'
-      document.body.style.marginLeft = '0px'
-    } else {
-      sidebar.style.width = '250px'
-      document.body.style.marginLeft = '-250px'
-    }
+    const sidebar = document.getElementById('sidebar')
+    sidebar.style.display === 'block'
+      ? sidebar.style.display = 'none'
+      : sidebar.style.display = 'block'
   }
 
   return (

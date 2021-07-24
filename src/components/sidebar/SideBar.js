@@ -4,7 +4,7 @@ import styles from './sidebar.module.css'
 export default () => {
   return (
     <nav id="sidebar" className={styles.sidebar}>
-      {window.innerWidth <= 500 && <MobileMenu />}
+      {window.innerWidth <= 600 && <MobileMenu />}
       <div>
         {/* search filter checkboxes etc. */}
         list of filters and stuff,

@@ -19,7 +19,7 @@ export default () => {
   }
 
   return (
-    <main className={styles.main}>
+    <main id="main" className={styles.main}>
       {renderContent()}
     </main>
   )
