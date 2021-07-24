@@ -3,6 +3,7 @@ import Modal from './components/modal/Modal'
 import Header from './components/header/Header'
 import Main from './components/main/Main'
 import Footer from './components/footer/Footer'
+import SideBar from './components/sidebar/SideBar'
 import "./styles.css"
 
 export default () => 
@@ -11,4 +12,5 @@ export default () =>
     <Header />
     <Main />
     <Footer />
+    <SideBar />
   </Provider>

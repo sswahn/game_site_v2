@@ -1,9 +1,19 @@
 
 .footer {
+  font-size: 12px;
   padding: 0 0 0 20px;
   position: fixed;
   left: 0;
   bottom: 0;
+}
+
+.footer a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer span {
+  margin: 0 5px;
 }
 
 @media all and (max-width: 1000px) {

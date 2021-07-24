@@ -74,7 +74,8 @@
 .games {}
 
 .login button,
-.cart button {
+.cart button,
+.sidebar button {
   background: #444;
   border: 0;
   color: white;
@@ -128,7 +129,8 @@
   .form {
     display: none;
   }
-  .nav {
+  .login, 
+  .cart {
     display: none;
   }
 }
