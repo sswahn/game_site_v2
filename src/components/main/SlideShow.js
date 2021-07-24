@@ -1,12 +1,15 @@
-import { useContext, useState, useEffect } from 'react'
-import { Context } from '../../Provider'
+import { useState, useEffect } from 'react'
 import styles from './main.module.css'
 
-export default ({ images }) => {
-  const [context, dispatch] = useContext(Context)
+export default ({ images, isHovering }) => {
   const [state, setState] = useState({ index: 0 })
 
-  const slideShow = async() => {
+  const slideShow = async () => {
+    console.log('isHovering', isHovering)
+    if (!isHovering) {
+      return
+    }
+    console.log('inside slideShow')
     const slides = document.getElementById('slideshow').children
     if (state.index !== 0) {
       slides[state.index - 1].style.display = 'none'
@@ -21,8 +24,8 @@ export default ({ images }) => {
   }
 
   useEffect(() => {
-    // this should fire only on hover
-    slideShow()
+      console.log('useEffect')
+      slideShow()
   }, [state.index])
 
   return (

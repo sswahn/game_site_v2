@@ -8,7 +8,10 @@ import fake_data from './data'
 
 export default () => {
   const [context, dispatch] = useContext(Context)
-  const [state, setState] = useState({ data: [] })
+  const [state, setState] = useState({ 
+    data: [],
+    hover_state: false
+  })
 
   const loadData = async () => {
     /* 
@@ -33,6 +36,10 @@ export default () => {
     dispatch({ type: 'list-item', payload: event.currentTarget.id })
   }
 
+  const setHoverState = () => {
+    setState({ ...state, hover_state: !state.hover_state })
+  }
+
   useEffect(() => {
     loadData()
   }, [context.search])
@@ -43,11 +50,11 @@ export default () => {
       {/* add loading icon spinner with ternary */}
 
       {state.data.length && state.data.map(game =>
-        <article key={game.id} id={game.id} onClick={openListItem}>
+        <article key={game.id} id={game.id} onClick={openListItem} onMouseOver={setHoverState} onMouseOut={setHoverState}>
           <header className={styles.tooltip}>
             <h1>{game.title}</h1>
             <time dateTime="">{game.release_date}</time>
-            <SlideShow images={game.images} />
+            <SlideShow images={game.images} isHovering={state.hover_state} />
             <p>{game.description.short}</p>
             <div>{game.platforms}</div>
           </header>
