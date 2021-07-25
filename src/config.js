@@ -1,4 +1,7 @@
 export default {
-  api: {},
+  api: {
+    games: '',
+    cart: '',
+  },
 
 }

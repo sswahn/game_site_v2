@@ -20,8 +20,8 @@ export default () => {
       return alert(response.error.message)
     }
     */
-    store.set('storage', fake_data)
-    const data = context.search ? context.search : fake_data
+    store.set('storage', fake_data) //response.message
+    const data = context.search ? context.search : fake_data //response.message
     dispatch({ type: 'data', payload: data })
   }
 
@@ -69,7 +69,7 @@ export default () => {
               <img src={game.developer_logo} alt={game.develper} />
             </div>
             <div>
-              <p>{game.price}</p>
+              <p>{`$${game.price}`}</p>
               <p>Rating: <span>{game.rating}</span></p>
               <div>{game.genre.map(type => <button key={type} id={type} onClick={filterByGenre}>{type}</button>)}</div>
             </div>

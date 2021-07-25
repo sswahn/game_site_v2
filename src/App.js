@@ -8,12 +8,11 @@ import "./styles.css"
 
 /**
  * fix hover functionality. (useEffect issue)
+ * 
  * make list item page.
  * 
- * style login modal
- * and cart modal
+ * style cart modal
  * 
- * create click off close modal functionality
  */
 
 export default () => 
