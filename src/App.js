@@ -14,6 +14,8 @@ import "./styles.css"
  * and cart modal
  * 
  * move filter list to sidebar
+ * 
+ * create click off close modal functionality
  */
 
 export default () => 

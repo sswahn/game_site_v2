@@ -6,9 +6,40 @@ export default () => {
     <nav id="sidebar" className={styles.sidebar}>
       {window.innerWidth <= 600 && <MobileMenu />}
       <div>
-        {/* search filter checkboxes etc. */}
-        list of filters and stuff,
-        need a close button too (for mobile view)
+        <div>
+          <button>Featured</button>
+          <button>New Releases</button>
+          <button>On Sale</button>
+          <button>Top Sellers</button>
+          <button>Recommended</button>
+        </div>
+        <div>
+          <button>Action</button>
+          <button>Adventure</button>
+          <button>Horror</button>
+          <button>RPG</button>
+          <button>Shooters</button>
+          <button>Sports &amp; racing</button>
+          <button>Strategy</button>
+          <button>Survival</button>
+        </div>
+        <div>
+          <button>Windows</button>
+          <button>Mac OS X</button>
+          <button>Linux</button>
+          <button>Android</button>
+          <button>iOS</button>
+          <button>Web</button>
+        </div>
+        <div>
+          <button>Free</button>
+          <button>$5 or less</button>
+          <button>$10 or less</button>
+          <button>$15 or less</button>
+          <button>$20 or less</button>
+          <button>$25 or less</button>
+        </div>
+
       </div>
     </nav>
   )
