@@ -25,14 +25,16 @@ export default () => {
     */
     store.set('storage', fake_data)
     const data = context.search ? context.search : fake_data
-    setState({ data })
+    setState({ ...state, data })
   }
 
   const filterByGenre = event => {
     const type = event.target.id
+    if (state.filters.includes(type)) {
+      return
+    }
     const storage = store.get('storage')
     const data = storage.filter(game => game.genre.includes(type))
-    console.log('state.filters: ', state.filters)
     setState({ ...state,  data, filters: [...state.filters, type] })
   }
 
