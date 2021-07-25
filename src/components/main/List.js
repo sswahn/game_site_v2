@@ -2,6 +2,7 @@ import { useContext, useState, useEffect } from 'react'
 import { Context } from '../../Provider'
 import server from '../../utilities/Server'
 import store from '../../utilities/Store'
+import Filters from './Filters'
 import SlideShow from './SlideShow'
 import styles from './main.module.css'
 import fake_data from './data'
@@ -10,11 +11,7 @@ import { faSpinner } from '@fortawesome/free-solid-svg-icons'
 
 export default () => {
   const [context, dispatch] = useContext(Context)
-  const [state, setState] = useState({ 
-    data: [],
-    filters: [],
-    hover_state: false,
-  })
+  const [state, setState] = useState({ hover_state: false })
 
   const loadData = async () => {
     /* 
@@ -25,17 +22,7 @@ export default () => {
     */
     store.set('storage', fake_data)
     const data = context.search ? context.search : fake_data
-    setState({ ...state, data })
-  }
-
-  const filterByGenre = event => {
-    const type = event.target.id
-    if (state.filters.includes(type)) {
-      return
-    }
-    const storage = store.get('storage')
-    const data = storage.filter(game => game.genre.includes(type))
-    setState({ ...state,  data, filters: [...state.filters, type] })
+    dispatch({ type: 'data', payload: data })
   }
 
   const openListItem = event => {
@@ -46,18 +33,15 @@ export default () => {
     setState({ ...state, hover_state: !state.hover_state })
   }
 
-  const removeFilter = event => {
-    const filter = event.target.textContent
-    const filtered = state.filters.filter(item => item !== filter)
-    setState({ ...state, filters: filtered })
-  }
-
-  const renderFilters = () => {
-    return (
-      <div id="filters" className={styles.filters}>
-        {state.filters.map(filter => <div onClick={removeFilter}>{filter}</div>)}
-      </div>
-    )
+  const filterByGenre = event => {
+    const type = event.target.id
+    if (context.filters.includes(type)) {
+      return
+    }
+    const storage = store.get('storage')
+    const data = storage.filter(game => game.genre.includes(type))
+    dispatch({ type: 'data',  payload: data })
+    dispatch({ type: 'filters', payload: [...context.filters, type] })
   }
 
   useEffect(() => {
@@ -66,8 +50,8 @@ export default () => {
 
   return (
     <div className={styles.list}>
-      {state.filters && state.filters.length ? renderFilters() : <></>}
-      {!state.data.length ? <FontAwesomeIcon className="loading-icon" icon={faSpinner} /> : state.data.map(game =>
+      {context.filters.length ? <Filters /> : <></>}
+      {!context.data.length ? <FontAwesomeIcon className="loading-icon" icon={faSpinner} /> : context.data.map(game =>
         <article key={game.id} id={game.id} onClick={openListItem} onMouseOver={setHoverState} onMouseOut={setHoverState}>
           <header className={styles.tooltip}>
             <h1>{game.title}</h1>
