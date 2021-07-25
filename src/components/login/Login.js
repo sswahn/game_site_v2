@@ -1,4 +1,4 @@
-import { useState, useContext } from 'react'
+import { useState, useContext, useEffect } from 'react'
 import { Context } from '../../Provider'
 import config from '../../config'
 import server from '../../utilities/Server'
@@ -25,9 +25,22 @@ export default () => {
     window.location.href = config.url.home
   }
 
+  const closeModal = event => {
+    if (event.target.closest('#login') === null) {
+      dispatch({ type: 'modal' })
+    }
+  }
+
+  useEffect(() => {
+    document.body.addEventListener('click', closeModal)
+    return () => {
+      document.body.removeEventListener('click', closeModal)
+    }
+  }, [])
+
   return (
     <div className={styles.login}>
-      <div className={styles.container}>
+      <div id="login" className={styles.container}>
         <form className={styles.form} onSubmit={handleSubmit}>
           <h2>Sign In</h2>
           <input type="text" placeholder="Username" required />

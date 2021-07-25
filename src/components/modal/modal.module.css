@@ -8,23 +8,6 @@
   z-index: 99999;
 }
 
-.button {
-  background: none;
-  border: 0;
-  color: #ccc;
-  cursor: pointer;
-  font-size: 38px;
-  position: absolute;
-  right: 40px;
-  top: 40px;
-  width: 60px;
-  z-index: 99999;
-}
-
-.button:hover {
-  color: white;
-}
-
 .content {
   width: 100%;
   left: 50%;

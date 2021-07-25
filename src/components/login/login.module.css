@@ -7,7 +7,7 @@
 }
 
 .container {
-  background: white;
+  background: #444;
   border-radius: 5px;
   left: 50%;
   margin: 0 auto;
@@ -21,7 +21,7 @@
 }
 
 .form h2 {
-  color: var(--main-color);
+  color: white;
   font-weight: lighter;
   text-align: center;
 }
@@ -37,7 +37,7 @@
 }
 
 .form button {
-  background: var(--main-color);
+  background: #666;
   border: 0;
   color: white;
   display: block;
@@ -49,11 +49,11 @@
 }
 
 .form button:hover {
-  background: var(--alt-color);
+  background: #777;
 }
 
 .form div {
-  color: var(--main-color);
+  color: white;
   display: flex;
   justify-content: space-between;
 }
@@ -77,6 +77,13 @@
   text-decoration: none;
 }
 
+.form button:last-child {
+  background: none;
+  font-weight: normal;
+  height: auto;
+  margin: 0;
+}
+.form button:last-child:hover,
 .form label:hover, .form a:hover {
-  color: var(--alt-color);
+  text-decoration: underline;
 }
