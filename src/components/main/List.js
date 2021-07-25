@@ -7,13 +7,13 @@ import styles from './main.module.css'
 import fake_data from './data'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSpinner } from '@fortawesome/free-solid-svg-icons'
-import { faSpin } from '@fortawesome/free-solid-svg-icons'
 
 export default () => {
   const [context, dispatch] = useContext(Context)
   const [state, setState] = useState({ 
     data: [],
-    hover_state: false
+    filters: [],
+    hover_state: false,
   })
 
   const loadData = async () => {
@@ -32,7 +32,8 @@ export default () => {
     const type = event.target.id
     const storage = store.get('storage')
     const data = storage.filter(game => game.genre.includes(type))
-    setState({ data })
+    console.log('state.filters: ', state.filters)
+    setState({ ...state,  data, filters: [...state.filters, type] })
   }
 
   const openListItem = event => {
@@ -40,8 +41,15 @@ export default () => {
   }
 
   const setHoverState = () => {
-    // buggy when hovering over tooltip?
     setState({ ...state, hover_state: !state.hover_state })
+  }
+
+  const renderFilters = () => {
+    return (
+      <div id="filters" className={styles.filters}>
+        {state.filters.map(filter => <div>{filter}</div>)}
+      </div>
+    )
   }
 
   useEffect(() => {
@@ -50,9 +58,9 @@ export default () => {
 
   return (
     <div className={styles.list}>
-
-      {/* add loading icon spinner with ternary */}
-
+      {console.log('state: ', state)}
+      {state.filters && state.filters.length ? renderFilters() : <></>}
+      {/* <div id="filters" className={styles.filters}></div> */}
       {!state.data.length ? <FontAwesomeIcon className="loading-icon" icon={faSpinner} /> : state.data.map(game =>
         <article key={game.id} id={game.id} onClick={openListItem} onMouseOver={setHoverState} onMouseOut={setHoverState}>
           <header className={styles.tooltip}>
@@ -81,26 +89,3 @@ export default () => {
     </div>
   )
 }
-
-      /*
-
-        <article id={item.id} onClick={loadListItem}>
-          <header>
-            <a href={`/game?v=${item.id}`}>
-              <h1>{item.title}</h1>
-            </a>
-            <a href={`/game?v=${item.id}`}>
-              <img src={item.logo} alt={item.title} />
-            </a>
-            <p>{item.description.short}</p>
-            <div>Rating: {item.rating}</div>
-            <div>Release Date: {item.release_date}</div>
-            <div>Developer: {item.developer}</div>
-            <div>Genre: {item.genre.map(type => <button>{type}</button>)}</div>
-          </header>
-          <div className={styles.content}>
-            <iframe width="550" height="315" src={item.trailer} controls="1"></iframe>
-            <button>Add to Cart</button>
-          </div>
-        </article>
-      */
