@@ -25,9 +25,33 @@
   margin: 0 0 20px 0;
 }
 
+.container > div {
+  background: #333;
+  overflow: hidden;
+  padding: 10px;
+}
+
+.container > div div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.container > div button {
+  background: #666;
+  border: 0;
+  color: white;
+  float: right;
+  font-weight: bold;
+  margin-top: 20px; 
+  padding: 10px 45px;
+}
+
+.container > div button:hover {
+  background: #999;
+}
+
 .cart article {
   background: #222;
-
   display: flex;
   justify-content: space-between;
   margin-bottom: 5px;
@@ -39,18 +63,22 @@
   width: 150px;
 }
 
-.cart article p {
+.cart article > p {
   padding-top: 35px;
+  margin: 0 auto 0 15px;
 }
 
-.cart article > div:last-of-type {
-  padding-top: 20px;
+.cart article > div {
+  padding-top: 22px;
 }
 
-.cart article > div:last-of-type a {
+.cart article button {
+  background: none;
+  border: 0;
   color: #999;
+  text-decoration: underline;
 }
 
-.cart article > div:last-of-type a:hover {
+.cart article button:hover {
   color: white;
 }

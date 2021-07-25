@@ -1,4 +1,5 @@
 import SearchForm from './SearchForm'
+import HomeButton from './HomeButton'
 import LoginButton from './LoginButton'
 import CartButton from './CartButton'
 import SideBarButton from './SideBarButton'
@@ -6,14 +7,12 @@ import styles from './header.module.css'
 
 export default () => 
   <header className={styles.header}>
-    {/* remove h1 and from css */}
-    <h1>
-      <a href="/">
-        <img src="" alt="logo" />
-      </a>
-    </h1>
+    <a href="/">
+      <img src="" alt="logo" />
+    </a>
     <SearchForm />
     <nav className={styles.nav}>
+      <HomeButton />
       <LoginButton />
       <CartButton />
       <SideBarButton />

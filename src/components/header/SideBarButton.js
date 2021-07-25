@@ -13,8 +13,9 @@ export default () => {
 
   return (
     <div className={styles.sidebar}>
-      <button onClick={toggleSideBar}>
+      <button className={styles.tooltip} onClick={toggleSideBar}>
         <FontAwesomeIcon icon={faBars} />
+        <span className={styles.tooltiptext}>Menu</span>
       </button>
     </div>
   )

@@ -11,13 +11,14 @@
   z-index: 9999;
 }
 
-.header h1 a {
+.header a {
   color: white;
+  font-size: 32px;
   font-weight: lighter;
   text-decoration: none;
 }
 
-.header h1 a img {
+.header a img {
   width: 250px;
   padding: 5px 0;
 }
@@ -27,7 +28,7 @@
   display: flex;
   height: 40px;
   position: relative;
-  margin: 11px 40px 0 140px;
+  margin: 11px 40px 0 195px;
   max-width: 800px;
   width: 100%;
 }
@@ -74,6 +75,7 @@
 /* Buttons */
 .games {}
 
+.home button,
 .login button,
 .cart button,
 .sidebar button {

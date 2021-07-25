@@ -8,7 +8,7 @@ export default () => {
   const [context] = useContext(Context)
 
   const renderContent = () => {
-    switch (context.main) {
+    switch (context.main.type) {
       case 'registration':
         return undefined
       case 'list-item':

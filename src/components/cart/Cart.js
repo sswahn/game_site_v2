@@ -15,10 +15,6 @@ export default () => {
     total: 0
   })
 
-  const login = () => {
-    dispatch({ type: 'modal', payload: 'login' })
-  }
-
   const loadData = async () => {
     /* 
     const response = await server.get(config.api.cart)
@@ -29,6 +25,19 @@ export default () => {
     store.set('cart', fake_data)
     const total = fake_data.reduce((acc, val) => parseFloat(val.price) + acc, 0)
     setState({ data: fake_data, total: total.toFixed(2) })
+  }
+
+  const removeItem = async event => {
+    const response = await server.put(`${config.api.cart}/${event.target.id}`)
+    if (response.error !== undefined) {
+      return alert(response.error.message)
+    }
+    loadData()
+  }
+
+  const checkout = event => {
+    dispatch({ type: 'modal' })
+    // change main to checkout:
   }
 
   const closeModal = event => {
@@ -58,19 +67,17 @@ export default () => {
             <img src={game.logo} alt={game.title} />
             <p>{game.title}</p>
             <div>
-              <p>{game.price}</p>
-              <div>
-                <a href="">Remove</a>
-              </div>
+              <p>{`$${game.price}`}</p>
+              <button id={game.id} onClick={removeItem}>Remove</button>
             </div>
           </article>
         )}
         <div>
           <div>
-            <strong>Estimated total:</strong>
+            <strong>Total <small>(without tax)</small>:</strong>
             <strong>{`$${state.total}`}</strong>
           </div>
-          <button>Checkout</button>
+          <button onClick={checkout}>Checkout</button>
         </div>
       </section>
     </div>

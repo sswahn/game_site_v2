@@ -26,7 +26,7 @@ export default () => {
   }
 
   const openListItem = event => {
-    dispatch({ type: 'list-item', payload: event.currentTarget.id })
+    dispatch({ type: 'main', payload: 'list-item', options: event.currentTarget.id })
   }
 
   const setHoverState = () => {

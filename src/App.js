@@ -11,7 +11,13 @@ import "./styles.css"
  * 
  * make list item page.
  * 
- * style cart modal
+ * make comments section for list item page.
+ * 
+ * BUG: if you remove filters by clicking them directly (above the list)
+ * it does not remove highlighting from sidebar
+ * 
+ * BUG: search lists by search term. how to get back to regular list?
+ * (home button doesnt refresh because the state data has changed)
  * 
  */
 
