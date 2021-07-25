@@ -7,13 +7,11 @@ import SideBar from './components/sidebar/SideBar'
 import "./styles.css"
 
 /**
- * fix hover functionality.
+ * fix hover functionality. (useEffect issue)
  * make list item page.
  * 
  * style login modal
  * and cart modal
- * 
- * move filter list to sidebar
  * 
  * create click off close modal functionality
  */
