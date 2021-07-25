@@ -13,6 +13,7 @@
 .filters div {
   background: gray;
   border-radius: 10px;
+  cursor: pointer;
   display: inline-block;
   margin: 0 10px 40px 0;
   padding: 10px 20px;

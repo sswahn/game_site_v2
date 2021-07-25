@@ -46,10 +46,16 @@ export default () => {
     setState({ ...state, hover_state: !state.hover_state })
   }
 
+  const removeFilter = event => {
+    const filter = event.target.textContent
+    const filtered = state.filters.filter(item => item !== filter)
+    setState({ ...state, filters: filtered })
+  }
+
   const renderFilters = () => {
     return (
       <div id="filters" className={styles.filters}>
-        {state.filters.map(filter => <div>{filter}</div>)}
+        {state.filters.map(filter => <div onClick={removeFilter}>{filter}</div>)}
       </div>
     )
   }
@@ -60,9 +66,7 @@ export default () => {
 
   return (
     <div className={styles.list}>
-      {console.log('state: ', state)}
       {state.filters && state.filters.length ? renderFilters() : <></>}
-      {/* <div id="filters" className={styles.filters}></div> */}
       {!state.data.length ? <FontAwesomeIcon className="loading-icon" icon={faSpinner} /> : state.data.map(game =>
         <article key={game.id} id={game.id} onClick={openListItem} onMouseOver={setHoverState} onMouseOut={setHoverState}>
           <header className={styles.tooltip}>
