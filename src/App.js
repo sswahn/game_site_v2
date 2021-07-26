@@ -13,9 +13,6 @@ import "./styles.css"
  * 
  * make comments section for list item page.
  * 
- * Make home button mobile friendly,
- * also margin between form and home button needs adjusting
- * 
  * BUG: if you remove filters by clicking them directly (above the list)
  * it does not remove highlighting from sidebar
  * 

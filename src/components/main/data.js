@@ -4,7 +4,7 @@ export default [
     title: "The Great Gaias",
     description: {
       short: "A mysterious contract from the royal family sparks the interest of an organized band of sellswords. What seems like a normal job quickly spirals into a whirlwind of betrayal and tragedy, thrusting a young rogue and his unlikely companions into the middle of an ancient prophecy.",
-      about: "paragraph about this game",
+      about: "Having evolved from the Dungeons and Dragons table and refined for over a decade, The Great Gaias is a story-driven RPG that tells a compelling tale adapted from an original campaign setting and reimagined as the beloved classic genre.",
       story: "paragraph of game's story description",
       features: []
     },
