@@ -64,15 +64,15 @@ export default () => {
             </button>
           </div>
         </header>
-        <div>
+        <div className={styles.purchase}>
           <button>Buy</button>
         </div>
-        <div>
-          <div className={styles.tabs}>
+        <section>
+          <nav className={styles.tabs}>
             <button onClick={openTab} style={{background:'gray'}}>About</button>
             <button onClick={openTab}>Updates</button>
             <button onClick={openTab}>Requirements</button>
-          </div>
+          </nav>
           <div id="tab-content" className={styles.tabcontent}>
             <div id="about" style={{display:'block'}}>
               <h3>About</h3>
@@ -115,8 +115,10 @@ export default () => {
               </div>
             </div>
           </div>
-        </div>
-        <footer></footer>
+        </section>
+        <section className="reviews">
+          <p>Reviews section</p>
+        </section>
       </article>
     </div>
   )

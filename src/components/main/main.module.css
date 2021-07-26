@@ -204,6 +204,14 @@
   transform: translate(-50%, -50%);
 }
 
+.purchase {
+  margin: 20px 0;
+}
+.purchase button {
+  font-weight: bold;
+  padding: 15px 0;
+  width: 100%;
+}
 
 .tabs {
   overflow: hidden;
