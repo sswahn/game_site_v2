@@ -95,6 +95,12 @@ export default () => {
           <button onClick={addToCart}>Add to cart</button> 
         </section>
         <section>
+          {/* show the most recent announcement
+            and a "view more" link to modal list
+          */}
+          <button>Open Announcements modal</button> 
+        </section>
+        <section>
           <nav className={styles.tabs}>
             <button onClick={openTab} style={{background:'#666'}}>About</button>
             <button onClick={openTab}>Updates</button>
