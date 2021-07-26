@@ -55,13 +55,24 @@ export default () => {
       <article>
         <header id="header">
           <h1>{state.data.title}</h1>
-          <p>Rating: {state.data.rating}</p>
-          <iframe src={state.data.trailer} title={state.data.title}></iframe>
+          <video id="trailer" className="" src={state.data.trailer} 
+            playsInline="true" 
+            poster={state.data.logo} 
+            preload="none" 
+            controlsList="nodownload" 
+            controls>
+          </video>
           <div> 
             <img src={state.data.logo} alt={state.data.title} />
             <button onClick={playTrailer} title="Play Trailer">
               <FontAwesomeIcon icon={faPlayCircle} />
             </button>
+          </div>
+          <div>
+            <p>develper</p>
+            <p>Rating: {state.data.rating}</p>
+            <p>genre</p>
+            <p>release date</p>
           </div>
         </header>
         <div className={styles.purchase}>
@@ -115,6 +126,9 @@ export default () => {
               </div>
             </div>
           </div>
+        </section>
+        <section>
+         meta section, esrb etc. external links (game/dev website),
         </section>
         <section className="reviews">
           <p>Reviews section</p>

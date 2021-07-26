@@ -7,6 +7,8 @@ import SideBar from './components/sidebar/SideBar'
 import "./styles.css"
 
 /**
+ * TODO:
+ * 
  * fix hover functionality. (useEffect issue)
  * 
  * brake out child components from list item page.
@@ -19,6 +21,10 @@ import "./styles.css"
  * BUG: search lists by search term. how to get back to regular list?
  * (home button doesnt refresh because the state data has changed)
  * 
+ * 
+ * cart/ cart icon shouldnt display unless logged in.
+ * login icon shouldnt toggle with upload, it should
+ * toggle with profile, use user (no circle) icon
  */
 
 export default () => 
