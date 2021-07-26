@@ -41,7 +41,7 @@ export default () => {
   }
 
   const closeModal = event => {
-    if (event.target.closest('#login') === null) {
+    if (event.target.closest('#cart') === null) {
       dispatch({ type: 'modal' })
     }
   }
@@ -56,7 +56,7 @@ export default () => {
 
   return (
     <div className={styles.cart}>
-      <section id="cart-container" className={styles.container}>
+      <section id="cart" className={styles.container}>
         <h1>Your Shopping Cart</h1>
         {/*
         <h1>Your Cart is empty</h1>

@@ -22,6 +22,12 @@ export default () => {
     setState({ ...state, trailer: true })
   }
 
+  const closeTrailer = event => {
+    if (event.target.closest('#header') === null) {
+      setState({ ...state, trailer: false })
+    }
+  }
+
   useEffect(() => {
     loadData()
   }, [])
@@ -29,7 +35,7 @@ export default () => {
   return (
     <div className={styles.game}>
       <article>
-        <header>
+        <header id="header">
           <h1>{state.data.title}</h1>
           {state.trailer 
             ? <iframe src={state.data.trailer} title={state.data.title}></iframe>
@@ -42,7 +48,7 @@ export default () => {
           }
         </header>
         <div>
-          
+          <p>Heres some stuff.</p>
         </div>
         <footer></footer>
       </article>
