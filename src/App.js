@@ -9,9 +9,6 @@ import "./styles.css"
 /**
  * TODO:
  * 
- * brake out child components from list item page.
- * 
- * 
  * fix hover functionality. (useEffect issue)
  * 
  * make comments section for list item page.

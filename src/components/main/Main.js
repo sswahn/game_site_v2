@@ -1,7 +1,7 @@
 import { useContext } from 'react'
 import { Context } from '../../Provider'
 import List from './List'
-import ListItem from './ListItem'
+import Game from './game/Game'
 import styles from './main.module.css'
 
 export default () => {
@@ -12,7 +12,7 @@ export default () => {
       case 'registration':
         return undefined
       case 'list-item':
-        return <ListItem />
+        return <Game />
       default: 
         return <List />
     }
