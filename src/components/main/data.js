@@ -4,9 +4,7 @@ export default [
     title: "The Great Gaias",
     description: {
       short: "A mysterious contract from the royal family sparks the interest of an organized band of sellswords. What seems like a normal job quickly spirals into a whirlwind of betrayal and tragedy, thrusting a young rogue and his unlikely companions into the middle of an ancient prophecy.",
-      about: "Having evolved from the Dungeons and Dragons table and refined for over a decade, The Great Gaias is a story-driven RPG that tells a compelling tale adapted from an original campaign setting and reimagined as the beloved classic genre.",
-      story: "paragraph of game's story description",
-      features: []
+      about: "Having evolved from the Dungeons and Dragons table and refined for over a decade, The Great Gaias is a story-driven RPG that tells a compelling tale adapted from an original campaign setting and reimagined as the beloved classic genre."
     },
     logo: "https://d2rwgyv6d24c9f.cloudfront.net/the-great-gaias/the-great-gaias-title-screen.png",
     images: [
@@ -26,7 +24,7 @@ export default [
     ],
     developer: "Horizon's End",
     developer_logo: "https://d2rwgyv6d24c9f.cloudfront.net/horizonsend-logo-white.png",
-    release_date: "Jun 22, 2018",
+    date: "Jun 22, 2018",
     website: "https://horizonsend.com",
     links: [
       "https://www.facebook.com/horizonsendgaming",

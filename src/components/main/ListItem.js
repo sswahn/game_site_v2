@@ -8,7 +8,7 @@ import { faPlayCircle } from '@fortawesome/free-solid-svg-icons'
 export default () => {
   const [context, dispatch] = useContext(Context)
   const [state, setState] = useState({ 
-    data: [],
+    data: undefined,
     trailer: false
   })
 
@@ -37,13 +37,28 @@ export default () => {
     const tab = event.target.textContent.toLowerCase()
     for (const item of tabs.children) {
       item.textContent.toLowerCase() === tab
-       ? item.style.background = 'gray'
-       : item.style.background = 'white'
+       ? item.style.background = '#666'
+       : item.style.background = '#444'
     }
     const content = document.getElementById('tab-content')
     for (const item of content.children) {
       item.id === tab ? item.style.display = 'block' : item.style.display = 'none' 
     }
+  }
+
+  const filterByGenre = event => {
+    const type = event.target.id
+    if (context.filters.includes(type)) {
+      return
+    }
+    const storage = store.get('storage')
+    const data = storage.filter(game => game.genre.includes(type))
+    dispatch({ type: 'data',  payload: data })
+    dispatch({ type: 'filters', payload: [...context.filters, type] })
+  }
+
+  const addToCart = event => {
+
   }
 
   useEffect(() => {
@@ -52,6 +67,7 @@ export default () => {
 
   return (
     <div className={styles.game}>
+      {!state.data ? 'Loading...' :
       <article>
         <header id="header">
           <h1>{state.data.title}</h1>
@@ -68,19 +84,19 @@ export default () => {
               <FontAwesomeIcon icon={faPlayCircle} />
             </button>
           </div>
-          <div>
-            <p>develper</p>
-            <p>Rating: {state.data.rating}</p>
-            <p>genre</p>
-            <p>release date</p>
-          </div>
         </header>
-        <div className={styles.purchase}>
-          <button>Buy</button>
-        </div>
+        <section className={styles.subheader}>
+          <div>
+            <p>Developer: <span>{state.data.developer}</span></p>
+            <p>Rating: <span>{state.data.rating}</span></p>
+            <p>Genre: {state.data.genre.map(type => <button key={type} id={type} onClick={filterByGenre}>{type}</button>)}</p>
+            <p>Release date: <span>{state.data.date}</span></p>
+          </div>
+          <button onClick={addToCart}>Add to cart</button> 
+        </section>
         <section>
           <nav className={styles.tabs}>
-            <button onClick={openTab} style={{background:'gray'}}>About</button>
+            <button onClick={openTab} style={{background:'#666'}}>About</button>
             <button onClick={openTab}>Updates</button>
             <button onClick={openTab}>Requirements</button>
           </nav>
@@ -88,7 +104,7 @@ export default () => {
             <div id="about" style={{display:'block'}}>
               <h3>About</h3>
               {/* <p>{state.data.description.about}</p> */}
-              <p>yo</p>
+              <p>{state.data.description.about}</p>
             </div>
             <div id="updates">
               <h3>Updates</h3>
@@ -134,6 +150,7 @@ export default () => {
           <p>Reviews section</p>
         </section>
       </article>
+      }
     </div>
   )
 }

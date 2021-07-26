@@ -187,7 +187,7 @@
 .game article header video {
   border: 0;
   display: none;
-  height: 450px;
+  height: auto;
   width: 100%;
 }
 
@@ -204,10 +204,49 @@
   transform: translate(-50%, -50%);
 }
 
+.subheader {
+  background: #444;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  padding: 10px;
+}
+
+.subheader p {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.subheader div button {
+  background: none;
+  border: 0;
+  color: white;
+  font-size: 16px;
+  margin-right: 5px;
+}
+
+.subheader > button {
+  background: forestgreen;
+  border: 0;
+  color: white;
+  font-weight: bold;
+  height: 40px;
+  margin-top: 20px;
+  text-transform: uppercase;
+  width: 200px;
+}
+
+.subheader > button:hover {
+  background: darkgreen;
+}
+
 .purchase {
   margin: 20px 0;
 }
 .purchase button {
+  background: forestgreen;
+  border: 0;
+  color: white;
   font-weight: bold;
   padding: 15px 0;
   width: 100%;
@@ -215,12 +254,12 @@
 
 .tabs {
   overflow: hidden;
-  border: 1px solid #ccc;
-  background-color: #f1f1f1;
+  background: #444;
 }
 
 .tabs button {
-  background-color: inherit;
+  background: #444;
+  color: white;
   float: left;
   border: none;
   outline: none;
@@ -230,33 +269,27 @@
 }
 
 .tabs button:hover {
-  background-color: #ddd;
+  background: #eee;
 }
 
 .tabs button.active {
-  background-color: #ccc;
+  background-color: #666;
 }
 
 .tabcontent > div {
   display: none;
   padding: 6px 12px;
-  border: 1px solid #ccc;
   border-top: none;
 }
 
 
-
 @media all and (max-width: 500px) {
-
   .list {
     padding: 0 20px
   }
-
   .list article > div:last-of-type img {
     max-width: 150px;
   }
-
-
 }
 
 
