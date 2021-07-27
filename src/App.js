@@ -18,6 +18,8 @@ import "./styles.css"
  * 
  * make comments section for list item page.
  * 
+ * list page consider design of genre filter buttons...
+ * 
  * BUG: if you remove filters by clicking them directly (above the list)
  * it does not remove highlighting from sidebar
  * 

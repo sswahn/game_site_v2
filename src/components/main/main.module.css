@@ -166,13 +166,14 @@
 
 
 
-
-
 @media all and (max-width: 500px) {
   .list {
-    padding: 0 20px
+    padding: 0;
   }
-  .list article > div:last-of-type img {
-    max-width: 150px;
+  .body img {
+    max-width: 100px;
+  }
+  .genre {
+    bottom: -15px
   }
 }

@@ -45,3 +45,13 @@
 .dropdown > div button:hover {
   background: #666;
 }
+
+
+@media all and (max-width: 500px) {
+  .dropdown > div {
+
+    left: 50%;
+    bottom: 25%;
+    transform: translate(-50%, -25%);
+  }
+}
