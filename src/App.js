@@ -14,6 +14,7 @@ import "./styles.css"
  * 
  * fix cart button display issue (form/nav margins too)
  * 
+ * add borders to filter labels
  * 
  * make comments section for list item page.
  * 

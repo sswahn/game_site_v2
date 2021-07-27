@@ -4,10 +4,12 @@ import server from '../../utilities/Server'
 import store from '../../utilities/Store'
 import Filters from './Filters'
 import SlideShow from './SlideShow'
+import Dropdown from './dropdown/Dropdown'
 import styles from './main.module.css'
 import fake_data from './data'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSpinner } from '@fortawesome/free-solid-svg-icons'
+
 
 export default () => {
   const [context, dispatch] = useContext(Context)
@@ -52,7 +54,10 @@ export default () => {
     <div className={styles.list}>
       {context.filters.length ? <Filters /> : <></>}
       {!context.data.length ? <FontAwesomeIcon className="loading-icon" icon={faSpinner} /> : context.data.map(game =>
-        <article key={game.id} id={game.id} onClick={openListItem} onMouseOver={setHoverState} onMouseOut={setHoverState}>
+        <article key={game.id} id={game.id}>
+          <figure onClick={openListItem} onMouseOver={setHoverState} onMouseOut={setHoverState}>
+            <img src={game.logo} alt={game.title} />
+          </figure>
           <header className={styles.tooltip}>
             <h1>{game.title}</h1>
             <time dateTime="">{game.release_date}</time>
@@ -61,18 +66,20 @@ export default () => {
             {/* use platform icons instead of text */}
             <div>{game.platforms}</div>
           </header>
-          <div className={styles.logo}>
-            <img src={game.logo} alt={game.title} />
-          </div>
-          <div className={styles.meta}>
+          <div className={styles.body}>
+            
             <div>
               <img src={game.developer_logo} alt={game.develper} />
             </div>
+
             <div>
-              <p>{`$${game.price}`}</p>
+              <Dropdown id={game.id} />
+              {/* <p>{`$${game.price}`}</p>
               <p>Rating: <span>{game.rating}</span></p>
-              <div>{game.genre.map(type => <button key={type} id={type} onClick={filterByGenre}>{type}</button>)}</div>
+              <div>{game.genre.map(type => <button className={styles.genre} key={type} id={type} onClick={filterByGenre}>{type}</button>)}</div>
+             */}
             </div>
+            
           </div>
         </article>
       )}

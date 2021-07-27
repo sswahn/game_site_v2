@@ -2,6 +2,8 @@ import { useContext } from 'react'
 import { Context } from '../../Provider'
 import MobileMenu from './MobileMenu'
 import styles from './sidebar.module.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTh } from '@fortawesome/free-solid-svg-icons'
 
 export default () => {
   const [context, dispatch] = useContext(Context)
@@ -25,6 +27,11 @@ export default () => {
   return (
     <nav id="sidebar" className={styles.sidebar}>
       {window.innerWidth <= 600 ? <MobileMenu /> : <></>}
+      <div>
+        <button>
+          <FontAwesomeIcon icon={faTh} />
+        </button>
+      </div>
       <div>
         <div>
           <div>Category</div>

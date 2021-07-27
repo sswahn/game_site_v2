@@ -25,51 +25,54 @@
 }
 
 .list article {
-  cursor: pointer;
   margin: 0 auto 40px auto;
   max-width: 700px;
   position: relative;
   width: 100%;
 }
 
-.logo img {
+.list article > figure {
+  cursor: pointer;
   width: 100%;
 }
 
-.meta {
-  background: #444;
+.list article figure img {
+  width: 100%;
+}
+
+.body {
+  background: none;
   display: flex;
   justify-content: space-between;
-  margin: -3px 5px 5px 0;
   overflow: hidden;
   text-align: right;
   width: 100%;
 }
 
 /* devloper logo wrapper */
-.meta > div:first-of-type {
+.body > div:first-of-type {
   padding: 0 0 0 5px;
 }
 
-.meta img {
+.body img {
   max-width: 200px;
   width: 100%;
 }
 
-.meta > div:last-child {
+.body > div:last-child {
   padding: 12px 10px 0 0;
 }
 
-.meta p:first-of-type {
+.body p:first-of-type {
   font-weight: bold;
   padding: 0 0 5px 0;
 }
 
-.meta p {
+.body p {
   padding: 0 0 10px 0;
 }
 
-.meta button {
+.genre {
   background: #222;
   border: 0;
   color: white;
@@ -78,11 +81,11 @@
   padding: 3px 6px;
 }
 
-.meta button:hover {
+.body > button:hover {
   background: #666;
 }
 
-.list article:hover .tooltip {
+.list article figure:hover + .tooltip {
   display: block;
   opacity: 1;
   transition: display 1s, opacity 1s linear;
