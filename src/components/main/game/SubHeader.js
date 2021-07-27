@@ -16,12 +16,20 @@ export default ({ data }) => {
   return (
     <section className={styles.subheader}>
       <div>
-        <p>Developer: <span>{data.developer}</span></p>
-        <p>Rating: <span>{data.rating}</span></p>
+        <p>Developer: <button>{data.developer}</button></p>
+        <p>Rating: <button>{data.rating}</button></p>
         <p>Genre: {data.genre.map(type => <button key={type} id={type} onClick={filterByGenre}>{type}</button>)}</p>
         <p>Release date: <span>{data.date}</span></p>
       </div>
-      <button id={data.id} onClick={addToCart}>Add to cart</button> 
+      <div>
+        <button id={data.id} onClick={addToCart}>Add to cart</button> 
+        <button>Add to wishlist</button>
+      </div>
     </section>
   )
 }
+
+/**
+ * forgot to make image slideshow.
+ * break out dev section below with logo and description, link etc
+ */

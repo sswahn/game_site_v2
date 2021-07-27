@@ -42,6 +42,11 @@
   transform: translate(-50%, -50%);
 }
 
+
+/* all this should be redone,
+  make fonts large
+  move devloper info to its own section
+*/
 .subheader {
   background: #444;
   display: flex;
@@ -51,16 +56,24 @@
 }
 
 .subheader p {
-  font-size: 14px;
+  color: #999;
+  font-size: 12px;
   margin-bottom: 5px;
+  text-transform: uppercase;
 }
 
 .subheader div button {
   background: none;
   border: 0;
-  color: white;
+  color: orange;
   font-size: 14px;
-  margin-right: 5px;
+  margin-left: 5px;
+}
+
+.subheader span {
+  font-size: 14px;
+  margin-left: 5px;
+  text-transform: capitalize;
 }
 
 .subheader div button:hover {
@@ -75,19 +88,29 @@
   content: ""
 }
 
-.subheader > button {
+.subheader div:last-child button {
   background: forestgreen;
   border: 0;
   color: white;
+  display: block;
   font-weight: bold;
   height: 40px;
-  margin-top: 20px;
   text-transform: uppercase;
   width: 200px;
 }
 
-.subheader > button:hover {
+.subheader div:last-child button:last-child {
+  background: none;
+  text-transform: capitalize;
+  text-decoration: underline;
+}
+.subheader div:last-child button:last-child:hover {
+  background: none;
+}
+
+.subheader div:last-child button:hover {
   background: darkgreen;
+  text-decoration: none;
 }
 
 .purchase {

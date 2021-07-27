@@ -22,6 +22,13 @@ export default [
       "Windows 7/8/10 (32bit/64bit)",
       "Mac OSX 10.10 or better"
     ],
+    details: [
+      "Single-player",
+      "Partial controller support",
+      "In app purchases, etc."
+    ],
+    languages: ["English"],
+    eula: "",
     developer: "Horizon's End",
     developer_logo: "https://d2rwgyv6d24c9f.cloudfront.net/horizonsend-logo-white.png",
     date: "Jun 22, 2018",
@@ -32,7 +39,15 @@ export default [
       "https://www.instagram.com/horizonsendgaming"
     ],
     price: "19.99",
-    rating: "Positive"
+    rating: "Positive",
+    esrb: [
+      "Animated Blood",
+      "Alcohol References",
+      "Cartoon Violence",
+      "Comic Mischief",
+      "Crude Humor"
+    ],
+    copyright: ""
  },
  {
   id: "2",
