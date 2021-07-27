@@ -4,16 +4,28 @@ import server from '../../../utilities/Server'
 import styles from './dropdown.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEllipsisV } from '@fortawesome/free-solid-svg-icons'
+import { faCheckSquare } from '@fortawesome/free-solid-svg-icons'
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
+import { faStar } from '@fortawesome/free-solid-svg-icons'
+import { faComments } from '@fortawesome/free-solid-svg-icons'
+import { faShareAlt } from '@fortawesome/free-solid-svg-icons'
 
 export default ({ id }) => {
-  const [state, setState] = useState({ user: undefined })
+  const [state, setState] = useState({ 
+    cart: false,
+    wishlist: false,
+    watchlist: false
+  })
 
   const loadUserData = async () => {
     const response = await server.get(config.api.user)
     if (response.error !== undefined) {
       return alert(response.error.message)
     }
-    setState({ user: response.message })
+    const cart = response.message.cart.includes(id)
+    const wishlist = response.message.wishlist.includes(id)
+    const watchlist = response.message.watchlist.includes(id)
+    setState({ cart, wishlist, watchlist })
   }
 
   const addToCart = async event => {
@@ -85,11 +97,40 @@ export default ({ id }) => {
         <FontAwesomeIcon icon={faEllipsisV} />
       </button>
       <div>
-        {/* need to check if user has already selected and change display where needed */}
-        <button onClick={addToCart}>Add to cart</button>
-        <button onClick={addToWishlist}>Add to wishlist</button>
-        <button onClick={addToWatchList}>Follow</button>
-        <button onClick={addToWatchList}>Share</button>
+        {state.cart 
+          ? <div>
+              <FontAwesomeIcon icon={faCheckSquare} />
+              <span>In cart</span> 
+            </div>
+          : <button onClick={addToCart}>
+              <FontAwesomeIcon icon={faShoppingCart} />
+              <span>Add to cart</span>
+            </button>
+        }
+        {state.wishlist 
+          ? <div>
+              <FontAwesomeIcon icon={faCheckSquare} />
+              <span>In wishlist</span> 
+            </div>
+          : <button onClick={addToWishlist}>
+              <FontAwesomeIcon icon={faStar} />
+              <span>Add to wishlist</span>
+            </button>
+        }
+        {state.watchlist 
+          ? <div>
+              <FontAwesomeIcon icon={faCheckSquare} />
+              <span>Following</span>
+            </div>
+         : <button onClick={addToWatchList}>
+             <FontAwesomeIcon icon={faComments} />
+             <span>Follow</span>
+           </button>
+        }
+        <button onClick={addToWatchList}>
+          <FontAwesomeIcon icon={faShareAlt} />
+          <span>Share</span>
+        </button>
       </div>
     </div>
   )

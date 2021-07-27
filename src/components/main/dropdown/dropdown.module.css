@@ -31,6 +31,7 @@
   width: 200px;
 }
 
+.dropdown > div div,
 .dropdown > div button {
   background: none;
   border: 0;
@@ -46,6 +47,10 @@
   background: #666;
 }
 
+.dropdown > div div span,
+.dropdown > div button span {
+  margin-left: 10px;
+}
 
 @media all and (max-width: 500px) {
   .dropdown > div {
