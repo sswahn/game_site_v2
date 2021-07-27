@@ -9,8 +9,8 @@ import "./styles.css"
 /**
  * TODO:
  * 
- * Focus on the list design (subheader) make that look better.
  * fix hover functionality. (useEffect issue)
+ * second item in list doesnt slide through images
  * 
  * fix cart button display issue (form/nav margins too)
  * 

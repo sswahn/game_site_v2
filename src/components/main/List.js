@@ -67,19 +67,13 @@ export default () => {
             <div>{game.platforms}</div>
           </header>
           <div className={styles.body}>
-            
-            <div>
-              <img src={game.developer_logo} alt={game.develper} />
+            <Dropdown id={game.id} />
+            <img src={game.developer_logo} alt={game.develper} />
+            <div className={styles.text}>
+              <p>{`$${game.price}`}</p>
+              {/* <p>Rating: <span>{game.rating}</span></p> */}
             </div>
-
-            <div>
-              <Dropdown id={game.id} />
-              {/* <p>{`$${game.price}`}</p>
-              <p>Rating: <span>{game.rating}</span></p>
-              <div>{game.genre.map(type => <button className={styles.genre} key={type} id={type} onClick={filterByGenre}>{type}</button>)}</div>
-             */}
-            </div>
-            
+            <div className={styles.genre}>{game.genre.map(type => <button key={type} id={type} onClick={filterByGenre}>{type}</button>)}</div>
           </div>
         </article>
       )}
