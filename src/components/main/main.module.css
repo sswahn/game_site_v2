@@ -72,16 +72,16 @@
 }
 
 .genre button {
-  background: #444;
-  border: 0;
+  background: none;
+  border: 1px solid #666;
   color: white;
   font-size: 12px;
   margin: 0 0 0 10px;
   padding: 5px 10px;
 }
 
-.body > button:hover {
-  background: #666;
+.genre button:hover {
+  background: #444;
 }
 
 .list article figure:hover + .tooltip {
