@@ -47,6 +47,11 @@ export default ({ id }) => {
   }
 
   const toggleMenu = event => {
+    document.querySelectorAll('[type=dropdown]').forEach(x => {
+      if (event.currentTarget.parentElement.id !== x.id) { 
+        x.lastChild.style.display = 'none'
+      }
+    })
     const menu = event.currentTarget.nextElementSibling
     if (menu.style.display !== 'block') {
       menu.style.display = 'block' 
@@ -75,7 +80,7 @@ export default ({ id }) => {
   }, [])
 
   return (
-    <div className={styles.dropdown} type="dropdown">
+    <div id={id} className={styles.dropdown} type="dropdown">
       <button onClick={toggleMenu}>
         <FontAwesomeIcon icon={faEllipsisV} />
       </button>
@@ -84,6 +89,7 @@ export default ({ id }) => {
         <button onClick={addToCart}>Add to cart</button>
         <button onClick={addToWishlist}>Add to wishlist</button>
         <button onClick={addToWatchList}>Follow</button>
+        <button onClick={addToWatchList}>Share</button>
       </div>
     </div>
   )
