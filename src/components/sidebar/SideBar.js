@@ -72,7 +72,7 @@ export default () => {
         </div>
         <div>
           <div>Price</div>
-          <button onClick={toggleFilter}>Free</button>
+          <button onClick={toggleFilter}>Free to play</button>
           <button onClick={toggleFilter}>$5 or less</button>
           <button onClick={toggleFilter}>$10 or less</button>
           <button onClick={toggleFilter}>$15 or less</button>

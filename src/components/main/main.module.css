@@ -10,8 +10,8 @@
 }
 
 .filters div {
-  background: #444;
-  border: 1px solid #666;
+  background: var(--light-color);
+  border: 1px solid var(--brightest-color);
   border-radius: 20px;
   cursor: pointer;
   display: inline-block;
@@ -57,22 +57,16 @@
   margin-top: 10px;
 }
 
-.text p {
-  
-}
-
 .text p:first-child {
   font-weight: bold;
 }
 
-.genre {
-  
-}
+.genre {}
 
 .genre button {
   background: #222;
   border: #666;
-  color: white;
+  color: var(--text-color);
   font-size: 18px;
   margin: 0 0 0 10px;
   padding: 5px 10px;
@@ -91,14 +85,14 @@
 .platform button {
   background: none;
   border: 0;
-  color: white;
+  color: var(--text-color);
   font-size: 18px;
   margin: 0 0 0 10px;
   padding: 5px 10px;
 }
 
 .platform button:hover {
-  background: #444;
+  background: var(--light-color);
 }
 
 .list article figure:hover + .tooltip {
@@ -110,7 +104,7 @@
 .tooltip {
   width: 120px;
   background-color: gray;
-  color: #fff;
+  color: var(--text-color);
   display: none;
   font-size: 12px;
   opacity: 0;
@@ -179,8 +173,6 @@
   from {opacity: .4}
   to {opacity: 1}
 }
-
-
 
 
 @media all and (max-width: 500px) {

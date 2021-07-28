@@ -1,7 +1,10 @@
 
 :root {
-  --main-color: #0070ff;
-  --alt-color: #00308F;
+  --text-color: white;
+  --dark-color: #222;
+  --light-color: #333;
+  --bright-color: #444;
+  --brightest-color: #555;
 }
 
 * {
@@ -12,8 +15,8 @@
 }
 
 html, body {
-  background: #222;
-  color: white;
+  background: var(--dark-color);
+  color: var(--text-color);
   height: 100%;
   width: 100%;
 }
@@ -31,5 +34,5 @@ button {
 }
 
 .highlight-filter {
-  background: #555;
+  background: var(--brightest-color);
 }

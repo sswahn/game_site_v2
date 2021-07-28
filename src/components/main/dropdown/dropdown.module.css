@@ -8,7 +8,7 @@
   background: none;
   border: 0;
   border-radius: 20px;
-  color: white;
+  color: var(--text-color);
   font-size: 18px;
   margin: 0 -5px 5px 0;
   padding: 10px 15px;
@@ -16,11 +16,11 @@
 }
 
 .dropdown > button:active {
-  background:#333;
+  background: var(--light-color);
 }
 
 .dropdown > div {
-  background: #333;
+  background: var(--light-color);
   border-radius: 5px;
   display: none;
   padding: 10px 0 20px 0;
@@ -34,7 +34,7 @@
 .dropdown > div button {
   background: none;
   border: 0;
-  color: white;
+  color: var(--text-color);
   display: block;
   font-size: 16px;
   padding: 10px 20px;
@@ -43,7 +43,7 @@
 }
 
 .dropdown > div button:hover {
-  background: #444;
+  background: var(--bright-color);
 }
 
 .dropdown > div div span,
@@ -53,7 +53,6 @@
 
 @media all and (max-width: 500px) {
   .dropdown > div {
-
     left: 50%;
     bottom: 25%;
     transform: translate(-50%, -25%);

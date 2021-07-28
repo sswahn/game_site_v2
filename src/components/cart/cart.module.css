@@ -8,7 +8,7 @@
 }
 
 .container {
-  background: #444;
+  background: var(--bright-color);
   border-radius: 5px;
   left: 50%;
   margin: 0 auto;
@@ -26,7 +26,7 @@
 }
 
 .container > div {
-  background: #333;
+  background: var(--dark-color);
   overflow: hidden;
   padding: 10px;
 }
@@ -37,9 +37,9 @@
 }
 
 .container > div button {
-  background: #666;
+  background: var(--brightest-color);
   border: 0;
-  color: white;
+  color: var(--text-color);
   float: right;
   font-weight: bold;
   margin-top: 20px; 
@@ -47,11 +47,11 @@
 }
 
 .container > div button:hover {
-  background: #999;
+  background: #666;
 }
 
 .cart article {
-  background: #222;
+  background: var(--dark-color);
   display: flex;
   justify-content: space-between;
   margin-bottom: 5px;
@@ -80,5 +80,32 @@
 }
 
 .cart article button:hover {
-  color: white;
+  color: var(--text-color);
+}
+
+@media all and (max-width: 500px) {
+  .container {
+    padding: 20px 0px 40px 0px;
+  }
+  .container h1 {
+    font-size: 18px;
+    text-align: center;
+  }
+  .cart article img {
+    width: 100px;
+  }
+  .cart article > p {
+    padding-top: 10px;
+  }
+  .cart article > div {
+    padding-top: 10px;
+  }
+  .cart article button {
+    margin-top: 5px;
+  }
+  .container > div button {
+    margin-top: 20px; 
+    padding: 15px 0;
+    width: 100%;
+  }
 }

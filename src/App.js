@@ -9,10 +9,6 @@ import "./styles.css"
 /**
  * TODO:
  * 
- * Cart modal Mobile design
- * Sign in modal mobile design (drop "Forgot Password" down)
- * 
- * 
  * filter function
  * 
  * when close filter labels need to refresh data

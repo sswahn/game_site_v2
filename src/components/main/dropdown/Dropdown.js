@@ -88,7 +88,6 @@ export default ({ id }) => {
 
   useEffect(() => {
     // loadData()
-
     document.body.addEventListener('click', closeMenu)
     return () => {
       document.body.removeEventListener('click', closeMenu)

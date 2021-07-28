@@ -1,7 +1,7 @@
 
 .mobile {
   padding: 10px 0;
-  border-bottom: 1px solid #666;
+  border-bottom: 1px solid var(--brightest-color);
 }
 
 .mobile form {
@@ -9,6 +9,7 @@
   display: flex;
   margin: 0 10px 10px 0;
 }
+
 .mobile form input{
   border: 0;
   outline: none;
@@ -18,15 +19,11 @@
 }
 
 .mobile form button {
-  background: white;
+  background: var(--text-color);
   border: 0;
   color: #999;
   padding: 0 5px 0 5px;
   width: 30px;
-}
-
-.mobile form button:hover {
-  background: #ccc;
 }
 
 .mobile button span {
@@ -34,7 +31,7 @@
 }
 
 .sidebar {
-  background: #444;
+  background: var(--light-color);
   direction: rtl;
   display: none;
   height: 100%;
@@ -44,10 +41,11 @@
   position: fixed;
   top: 0;
   width: 250px;
+  z-index: 999;
 }
 
 .sidebar div div {
-  border-top: 1px solid #666;
+  border-top: 1px solid var(--brightest-color);
   padding: 10px 0;
 }
 
@@ -68,7 +66,7 @@
 .sidebar button {
   background: none;
   border: 0;
-  color: white;
+  color: var(--text-color);
   direction: ltr;
   display: block;
   font-size: 15px;
@@ -77,5 +75,5 @@
   text-align: left;
 }
 .sidebar button:hover {
-  background: #555;
+  background: var(--bright-color);
 }
