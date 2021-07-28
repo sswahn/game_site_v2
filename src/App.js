@@ -9,9 +9,8 @@ import "./styles.css"
 /**
  * TODO:
  * 
- * Cart Mobile design
- * Sign in mobile design (drop "Forgot Password" down)
- * Hide grid button in mobile view
+ * Cart modal Mobile design
+ * Sign in modal mobile design (drop "Forgot Password" down)
  * 
  * 
  * filter function
@@ -34,10 +33,7 @@ import "./styles.css"
  * BUG: search lists by search term. how to get back to regular list?
  * (home button doesnt refresh because the state data has changed)
  * 
- * 
- * cart/ cart icon shouldnt display unless logged in.
- * login icon shouldnt toggle with upload, it should
- * toggle with profile, use user (no circle) icon
+ * Achievements.
  */
 
 export default () => 

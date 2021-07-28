@@ -1,4 +1,4 @@
-import { useContext } from 'react'
+import { useContext, useEffect } from 'react'
 import { Context } from '../../Provider'
 import MobileMenu from './MobileMenu'
 import styles from './sidebar.module.css'
@@ -8,13 +8,15 @@ import { faTh } from '@fortawesome/free-solid-svg-icons'
 export default () => {
   const [context, dispatch] = useContext(Context)
 
+  // need to highlight by context.filters
   const addFilter = filter => {
-    filter.style.background = '#555'
-    dispatch({ type: 'filters', payload: [...context.filters, filter.textContent] })
+    filter.classList.add('highlight-filter')
+    const data = [...context.filters, filter.textContent]
+    dispatch({ type: 'filters', payload: data })
   }
 
   const removeFilter = filter => {
-    filter.style.background = 'none'
+    filter.classList.remove('highlight-filter')
     const data = context.filters.filter(item => item !== filter.textContent)
     dispatch({ type: 'filters', payload: data })
   }
@@ -24,14 +26,21 @@ export default () => {
     context.filters.includes(filter.textContent) ? removeFilter(filter) : addFilter(filter)
   }
 
+  useEffect(() => {
+
+  }, [context.filters])
+
   return (
     <nav id="sidebar" className={styles.sidebar}>
       {window.innerWidth <= 600 ? <MobileMenu /> : <></>}
-      <div>
-        <button>
-          <FontAwesomeIcon icon={faTh} />
-        </button>
-      </div>
+      {window.innerWidth > 600 
+        ? <div>
+            <button>
+              <FontAwesomeIcon icon={faTh} />
+            </button>
+          </div>
+        : <></>
+      }
       <div>
         <div>
           <div>Category</div>

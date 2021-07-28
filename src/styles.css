@@ -29,3 +29,7 @@ button {
   top: 50%;
   transform: translate(-50%, -50%);
 }
+
+.highlight-filter {
+  background: #555;
+}
