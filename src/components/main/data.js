@@ -18,9 +18,9 @@ export default [
       "Indie",
       "RPG"
     ],
-    platforms: [
-      "Windows 7/8/10 (32bit/64bit)",
-      "Mac OSX 10.10 or better"
+    platform: [
+      "Windows",
+      "Mac"
     ],
     details: [
       "Single-player",
@@ -70,8 +70,8 @@ export default [
     "Indie",
     "RPG"
   ],
-  platforms: [
-    "Windows 7/8/10 (32bit/64bit)"
+  platform: [
+    "Windows"
   ],
   developer: "Horizon's End",
   developer_logo: "https://d2rwgyv6d24c9f.cloudfront.net/horizonsend-logo-white.png",

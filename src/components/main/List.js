@@ -9,7 +9,9 @@ import styles from './main.module.css'
 import fake_data from './data'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSpinner } from '@fortawesome/free-solid-svg-icons'
-
+import { faWindows } from '@fortawesome/free-brands-svg-icons'
+import { faApple } from '@fortawesome/free-brands-svg-icons'
+import { faLinux } from '@fortawesome/free-brands-svg-icons'
 
 export default () => {
   const [context, dispatch] = useContext(Context)
@@ -35,13 +37,14 @@ export default () => {
     setState({ ...state, hover_state: !state.hover_state })
   }
 
-  const filterByGenre = event => {
-    const type = event.target.id
+  const filterByPlatform = event => {
+    const type = event.currentTarget.id
     if (context.filters.includes(type)) {
       return
     }
     const storage = store.get('storage')
-    const data = storage.filter(game => game.genre.includes(type))
+    const data = storage.filter(game => game.platform.includes(type))
+    // filters override each other...
     dispatch({ type: 'data',  payload: data })
     dispatch({ type: 'filters', payload: [...context.filters, type] })
   }
@@ -49,6 +52,31 @@ export default () => {
   useEffect(() => {
     loadData()
   }, [context.search])
+
+  const renderPlatformIcon = os => {
+    if (os.includes('Windows')) {
+      return (
+        <button key={os} id={os} onClick={filterByPlatform}>
+          <FontAwesomeIcon icon={faWindows} />
+        </button>
+      )
+    }
+    if (os.includes('Mac')) {
+      return (
+        <button key={os} id={os} onClick={filterByPlatform}>
+          <FontAwesomeIcon icon={faApple} />
+        </button>
+      )
+    }
+    if (os.includes('Linux')) {
+      return (
+        <button key={os} id={os} onClick={filterByPlatform}>
+          <FontAwesomeIcon icon={faLinux} />
+        </button>
+      )
+    }
+  
+  }
 
   return (
     <div className={styles.list}>
@@ -73,7 +101,8 @@ export default () => {
               <p>{`$${game.price}`}</p>
               {/* <p>Rating: <span>{game.rating}</span></p> */}
             </div>
-            <div className={styles.genre}>{game.genre.map(type => <button key={type} id={type} onClick={filterByGenre}>{type}</button>)}</div>
+            {/* <div className={styles.genre}>{game.genre.map(type => <button key={type} id={type} onClick={filterByGenre}>{type}</button>)}</div> */}
+            <div className={styles.platform}>{game.platform.map(renderPlatformIcon)}</div>
           </div>
         </article>
       )}
