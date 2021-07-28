@@ -9,6 +9,17 @@ import "./styles.css"
 /**
  * TODO:
  * 
+ * Cart Mobile design
+ * Sign in mobile design (drop "Forgot Password" down)
+ * Hide grid button in mobile view
+ * 
+ * 
+ * filter function
+ * 
+ * when close filter labels need to refresh data
+ * 
+ * grid display
+ * 
  * BUG: if you remove filters by clicking them directly (above the list)
  * it does not remove highlighting from sidebar
  * 

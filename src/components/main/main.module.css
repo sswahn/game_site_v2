@@ -65,6 +65,23 @@
   font-weight: bold;
 }
 
+.genre {
+  
+}
+
+.genre button {
+  background: #222;
+  border: #666;
+  color: white;
+  font-size: 18px;
+  margin: 0 0 0 10px;
+  padding: 5px 10px;
+}
+
+.genre button:hover {
+  background: #444;
+}
+
 .platform {
   position: absolute;
   bottom: 0;
@@ -173,7 +190,7 @@
   .body img {
     max-width: 100px;
   }
-  .genre {
+  .platform {
     bottom: -15px
   }
 }
