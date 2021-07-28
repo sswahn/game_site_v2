@@ -9,7 +9,7 @@ export default () => {
   const [context, dispatch] = useContext(Context)
 
   const addFilter = filter => {
-    filter.style.background = 'gray'
+    filter.style.background = '#555'
     dispatch({ type: 'filters', payload: [...context.filters, filter.textContent] })
   }
 

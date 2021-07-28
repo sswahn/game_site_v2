@@ -17,7 +17,7 @@ export default ({ id }) => {
     watchlist: false
   })
 
-  const loadUserData = async () => {
+  const loadData = async () => {
     const response = await server.get(config.api.user)
     if (response.error !== undefined) {
       return alert(response.error.message)
@@ -58,6 +58,10 @@ export default ({ id }) => {
     }
   }
 
+  const shareGame = async event => {
+
+  }
+
   const toggleMenu = event => {
     document.querySelectorAll('[type=dropdown]').forEach(x => {
       if (event.currentTarget.parentElement.id !== x.id) { 
@@ -83,7 +87,7 @@ export default ({ id }) => {
   }
 
   useEffect(() => {
-    // loadUserData()
+    // loadData()
 
     document.body.addEventListener('click', closeMenu)
     return () => {
@@ -127,7 +131,7 @@ export default ({ id }) => {
              <span>Follow</span>
            </button>
         }
-        <button onClick={addToWatchList}>
+        <button onClick={shareGame}>
           <FontAwesomeIcon icon={faShareAlt} />
           <span>Share</span>
         </button>
