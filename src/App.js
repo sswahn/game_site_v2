@@ -15,10 +15,10 @@ import "./styles.css"
  * fix hover functionality. (useEffect issue)
  * second item in list doesnt slide through images
  * 
+ * move genre buttons to tooltip, and replace with platform icons
  * 
  * make comments section for list item page.
  * 
- * list page consider redesign/removal of genre filter buttons.
  * 
  * BUG: search lists by search term. how to get back to regular list?
  * (home button doesnt refresh because the state data has changed)

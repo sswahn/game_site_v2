@@ -143,6 +143,9 @@
   .cart {
     display: none;
   }
+  .sidebar button {
+    padding-right: 0;
+  }
   .tooltiptext {
     display: none;
   }
