@@ -124,15 +124,17 @@
   margin: 10px 0;
 }
 
-
-.slideshowcontainer {
-  width: 100%;
+.container {
+  background: var(--dark-color);
+  border: 1px solid var(--dark-color);
+  margin-top:10px;
   overflow: hidden;
+  width: 100%;
 }
 
 .slideshow {
   display: flex;
-  height: 275px;
+  height: 229px;
   width: 600px;
 }
 
@@ -143,6 +145,7 @@
 }
 
 .slideshow img {
+  vertical-align: middle;
   width: 100%;
 }
 

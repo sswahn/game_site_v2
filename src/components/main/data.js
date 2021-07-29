@@ -66,9 +66,9 @@ export default [
   ],
   trailer: "",
   genre: [
-    "Adventure",
-    "Indie",
-    "RPG"
+    "RPG",
+    "Choices Matter",
+    "Character Customization"
   ],
   platform: [
     "Windows"

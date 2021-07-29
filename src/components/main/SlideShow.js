@@ -10,7 +10,7 @@ export default ({ images, isHovering }) => {
   }, [state.index])
 
   return (
-    <div className={styles.slideshowcontainer}>
+    <div className={styles.container}>
       <div id="slideshow" className={styles.slideshow}>
         {images.map((image, index) =>
           <div key={index} style={{ transform: `translate3d(${-state.index * 100}%, 0, 0)` }}>
