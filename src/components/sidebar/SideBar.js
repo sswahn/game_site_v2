@@ -29,10 +29,10 @@ export default () => {
   const toggleGridView = event => {
     const view = document.getElementById('view')
     if (view.classList.contains('_src_components_main_main_module__grid')) {
-      view.classList = ''
+      view.className = ''
       view.classList.add('_src_components_main_main_module__list')
     } else {
-      view.classList = ''
+      view.className = ''
       view.classList.add('_src_components_main_main_module__grid')
     }
   }
