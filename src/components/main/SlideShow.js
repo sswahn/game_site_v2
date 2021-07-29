@@ -6,7 +6,7 @@ export default ({ images, isHovering }) => {
   const mounted = useRef(true)
 
   useEffect(() => {
-    setTimeout(() => setState({ index: state.index === images.length - 1 ? 0 : state.index + 1 }), 2000)
+    setTimeout(() => setState({ index: state.index === images.length - 1 ? 0 : state.index + 1 }), 1500)
     return () => {}
   }, [state.index])
 

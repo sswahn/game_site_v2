@@ -20,7 +20,7 @@ export default ({ data }) => {
     <header id="header" className={styles.header}>
       <h1>{data.title}</h1>
       <video id="trailer" className="" src={data.trailer} 
-        playsInline="true" 
+        playsInline={true} 
         poster={data.logo} 
         preload="none" 
         controlsList="nodownload" 

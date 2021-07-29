@@ -169,6 +169,33 @@
 
 
 
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.grid article {
+  margin: 0 15px 20px 15px;
+  max-width: 325px;
+}
+
+.grid figure img {
+  cursor: pointer;
+  width: 100%;
+}
+
+.grid .body {
+  height: 75px;
+}
+
+.grid .body > img {
+  max-width: 150px;
+}
+
+.grid .platform {
+  bottom: 0;
+}
+
 
 @media all and (max-width: 500px) {
   .list {

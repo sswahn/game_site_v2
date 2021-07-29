@@ -6,7 +6,8 @@ import SubHeader from './SubHeader'
 import Announcements from './Announcements'
 import Tabs from './Tabs'
 import styles from './game.module.css'
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSpinner } from '@fortawesome/free-solid-svg-icons'
 
 export default () => {
   const [context, dispatch] = useContext(Context)
@@ -16,11 +17,10 @@ export default () => {
   })
 
   const loadData = () => {
-    const storage = store.get('storage')
-    console.log('storage: ', storage)
-    const data = storage.filter(game => game.id === context.main.options)
-    console.log('data: ', data)
-    setState({ ...state, data: data[0] })
+    // make request fallback
+    const data = store.get('data')
+    const game = data.filter(game => game.id === context.main.id)
+    setState({ ...state, data: game[0] })
   }
 
   useEffect(() => {
@@ -29,7 +29,7 @@ export default () => {
 
   return (
     <div className={styles.game}>
-      {!state.data ? 'Loading...' :
+      {!state.data ? <FontAwesomeIcon className="loading-icon" icon={faSpinner} /> :
       <article>
         <Header data={state.data} />
         <SubHeader data={state.data} />

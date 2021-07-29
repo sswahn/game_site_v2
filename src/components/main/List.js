@@ -91,7 +91,7 @@ export default () => {
   }
 
   return (
-    <div className={styles.list}>
+    <div id="view" className={styles.list}>
       {context.filters.length ? <Filters /> : <></>}
       {!context.data.length ? <FontAwesomeIcon className="loading-icon" icon={faSpinner} /> : context.data.map(game =>
         <article key={game.id} id={game.id}>
@@ -101,7 +101,7 @@ export default () => {
 
           <header className={styles.tooltip}>
             <h1>{game.title}</h1>
-            <time dateTime="">Released: {game.date}</time>
+            <time dateTime={game.date_attribute}>Released: {game.date}</time>
             {state.hover_state ? <SlideShow images={game.images} /> : <></>}
             <p>{game.description.short}</p>
             {/* <p>Rating: <span>{game.rating}</span></p> */}

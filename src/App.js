@@ -17,7 +17,7 @@ import "./styles.css"
  * it does not remove highlighting from sidebar
  * 
  * 
- * grid display
+ * share modal
  * 
  * make comments section for list item page.
  * 

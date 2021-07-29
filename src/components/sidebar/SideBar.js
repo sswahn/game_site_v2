@@ -26,6 +26,17 @@ export default () => {
     context.filters.includes(filter.textContent) ? removeFilter(filter) : addFilter(filter)
   }
 
+  const toggleGridView = event => {
+    const view = document.getElementById('view')
+    if (view.classList.contains('_src_components_main_main_module__grid')) {
+      view.classList = ''
+      view.classList.add('_src_components_main_main_module__list')
+    } else {
+      view.classList = ''
+      view.classList.add('_src_components_main_main_module__grid')
+    }
+  }
+
   useEffect(() => {
 
   }, [context.filters])
@@ -35,7 +46,7 @@ export default () => {
       {window.innerWidth <= 600 ? <MobileMenu /> : <></>}
       {window.innerWidth > 600 
         ? <div>
-            <button>
+            <button onClick={toggleGridView}>
               <FontAwesomeIcon icon={faTh} />
             </button>
           </div>

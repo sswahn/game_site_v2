@@ -74,6 +74,7 @@
   width: 100%;
   text-align: left;
 }
+
 .sidebar button:hover {
   background: var(--bright-color);
 }
