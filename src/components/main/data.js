@@ -75,7 +75,7 @@ export default [
   ],
   developer: "Horizon's End",
   developer_logo: "https://d2rwgyv6d24c9f.cloudfront.net/horizonsend-logo-white.png",
-  release_date: "Jun 22, 2022",
+  date: "Jun 22, 2022",
   website: "https://horizonsend.com",
   links: [
     "https://www.facebook.com/horizonsendgaming",

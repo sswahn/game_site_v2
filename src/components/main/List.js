@@ -98,19 +98,21 @@ export default () => {
           <figure onClick={openListItem} onMouseOver={setHoverState} onMouseOut={setHoverState}>
             <img src={game.logo} alt={game.title} />
           </figure>
+
           <header className={styles.tooltip}>
             <h1>{game.title}</h1>
-            <time dateTime="">{game.release_date}</time>
+            <time dateTime="">Released: {game.date}</time>
             {state.hover_state ? <SlideShow images={game.images} isHovering={state.hover_state} /> : <></>}
             <p>{game.description.short}</p>
+            {/* <p>Rating: <span>{game.rating}</span></p> */}
             <div className={styles.genre}>{game.genre.map(type => <button key={type} id={type} onClick={filterByGenre}>{type}</button>)}</div>
           </header>
+          
           <div className={styles.body}>
             <Dropdown id={game.id} />
             <img src={game.developer_logo} alt={game.develper} />
             <div className={styles.text}>
               <p>{`$${game.price}`}</p>
-              {/* <p>Rating: <span>{game.rating}</span></p> */}
             </div>
             <div className={styles.platform}>{game.platform.map(renderPlatformIcon)}</div>
           </div>

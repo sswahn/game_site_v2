@@ -61,21 +61,6 @@
   font-weight: bold;
 }
 
-.genre {}
-
-.genre button {
-  background: #222;
-  border: #666;
-  color: var(--text-color);
-  font-size: 18px;
-  margin: 0 0 0 10px;
-  padding: 5px 10px;
-}
-
-.genre button:hover {
-  background: #444;
-}
-
 .platform {
   position: absolute;
   bottom: 0;
@@ -86,7 +71,7 @@
   background: none;
   border: 0;
   color: var(--text-color);
-  font-size: 18px;
+  font-size: 16px;
   margin: 0 0 0 10px;
   padding: 5px 10px;
 }
@@ -103,13 +88,13 @@
 
 .tooltip {
   width: 120px;
-  background-color: gray;
+  background-color: var(--brightest-color);
   color: var(--text-color);
   display: none;
   font-size: 12px;
   opacity: 0;
   max-width: 450px;
-  padding: 10px 20px 120px 20px;
+  padding: 20px;
   position: absolute;
   z-index: 1;
   top: 0;
@@ -125,21 +110,41 @@
   margin-top: -5px;
   border-width: 10px;
   border-style: solid;
-  border-color: transparent gray transparent transparent;
+  border-color: transparent var(--brightest-color) transparent transparent;
+}
+
+.tooltip h1 {
+  margin-bottom: 5px;
 }
 
 .tooltip img {
+  border: 2px solid var(--light-color);
   margin: 10px 0;
   width: 100%;
 }
 
-.tooltip strong {
-  font-size: 16px;
-}
-
 .tooltip p {
   font-size: 14px;
+  line-height: 20px;
+  margin: 10px 0;
 }
+
+.genre {}
+
+.genre button {
+  background: var(--light-color);
+  border: #666;
+  border-radius: 2px;
+  color: var(--text-color);
+  font-size: 14px;
+  margin: 0 2px 0 0;
+  padding: 5px 10px;
+}
+
+.genre button:hover {
+  background: #444;
+}
+
 
 
 /* Slideshow container */

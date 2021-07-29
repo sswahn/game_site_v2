@@ -9,6 +9,8 @@ import "./styles.css"
 /**
  * TODO:
  * 
+ * make featured section slideshow
+ * 
  * filter function
  * 
  * when close filter labels need to refresh data
