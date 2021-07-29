@@ -1,11 +1,12 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import styles from './main.module.css'
 
 export default ({ images, isHovering }) => {
   const [state, setState] = useState({ index: 0 })
+  const mounted = useRef(true)
 
   useEffect(() => {
-    setTimeout(() => setState({ index: state.index === images.length - 1 ? 0 : state.index + 1 }), 2500)
+    setTimeout(() => setState({ index: state.index === images.length - 1 ? 0 : state.index + 1 }), 2000)
     return () => {}
   }, [state.index])
 

@@ -24,7 +24,7 @@ export default () => {
       return alert(response.error.message)
     }
     */
-    store.set('storage', fake_data) //response.message
+    store.set('data', fake_data) //response.message
 
     //const data = context.filter.length ? context.filter.filter()
 
@@ -37,7 +37,7 @@ export default () => {
   }
 
   const openListItem = event => {
-    dispatch({ type: 'main', payload: 'list-item', options: event.currentTarget.id })
+    dispatch({ type: 'main', payload: 'list-item', id: event.currentTarget.parentElement.id })
   }
 
   const setHoverState = () => {
@@ -102,7 +102,7 @@ export default () => {
           <header className={styles.tooltip}>
             <h1>{game.title}</h1>
             <time dateTime="">Released: {game.date}</time>
-            {state.hover_state ? <SlideShow images={game.images} isHovering={state.hover_state} /> : <></>}
+            {state.hover_state ? <SlideShow images={game.images} /> : <></>}
             <p>{game.description.short}</p>
             {/* <p>Rating: <span>{game.rating}</span></p> */}
             <div className={styles.genre}>{game.genre.map(type => <button key={type} id={type} onClick={filterByGenre}>{type}</button>)}</div>

@@ -9,21 +9,15 @@ import "./styles.css"
 /**
  * TODO:
  * 
- * make featured section slideshow
+ * filter function (google tut)
  * 
- * filter function
- * 
- * when close filter labels need to refresh data
- * 
- * grid display
+ * when closing filter labels, need to refresh data
  * 
  * BUG: if you remove filters by clicking them directly (above the list)
  * it does not remove highlighting from sidebar
  * 
- * fix hover functionality. (useEffect issue)
- * second item in list doesnt slide through images
  * 
- * move genre buttons to tooltip, and replace with platform icons
+ * grid display
  * 
  * make comments section for list item page.
  * 

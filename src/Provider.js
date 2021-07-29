@@ -24,7 +24,7 @@ export default function Provider({ children }) {
       case 'session':
         return { ...state, session: action.payload }
       case 'main':
-        return { ...state, main: { type: action.payload, options: action.options } }
+        return { ...state, main: { type: action.payload, id: action.id } }
       default:
         return state
     }
