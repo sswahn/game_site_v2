@@ -39,10 +39,12 @@
 
 .list article figure img {
   width: 100%;
+  vertical-align: middle;
 }
 
 .body {
   width: 100%;
+  padding-top: 5px;
   position: relative;
 }
 
@@ -63,7 +65,7 @@
 
 .platform {
   position: absolute;
-  bottom: 0;
+  bottom: 10px;
   right: 0;
 }
 
@@ -87,19 +89,18 @@
 }
 
 .tooltip {
-  width: 120px;
-  background-color: var(--brightest-color);
+  background: var(--brightest-color);
   color: var(--text-color);
   display: none;
   font-size: 12px;
-  opacity: 0;
+  left: 102%;
   max-width: 450px;
+  opacity: 0;
   padding: 20px;
   position: absolute;
-  z-index: 1;
   top: 0;
-  left: 102%;
   width: 100%;
+  z-index: 1;
 }
 
 .tooltip::after {
@@ -117,17 +118,35 @@
   margin-bottom: 5px;
 }
 
-.tooltip img {
-  border: 2px solid var(--light-color);
-  margin: 10px 0;
-  width: 100%;
-}
-
 .tooltip p {
   font-size: 14px;
   line-height: 20px;
   margin: 10px 0;
 }
+
+
+.slideshowcontainer {
+  width: 100%;
+  overflow: hidden;
+}
+
+.slideshow {
+  display: flex;
+  height: 275px;
+  width: 600px;
+}
+
+.slideshow div {
+  display: block;
+  transition: ease 1000ms;
+  min-width: 410px;
+}
+
+.slideshow img {
+  width: 100%;
+}
+
+
 
 .genre {}
 
@@ -146,38 +165,6 @@
 }
 
 
-
-/* Slideshow container */
-.slideshow {
-  background: black;
-  height: 230px;
-  margin: 5px 0;
-  overflow: hidden;
-}
-
-/* Hide the images by default */
-.slides {
-  display: none;
-}
-
-.slides img {
-  margin: 0;
-}
-
-.fade {
-  animation-name: fade;
-  animation-duration: 1.5s;
-}
-
-@-webkit-keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
-}
-
-@keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
-}
 
 
 @media all and (max-width: 500px) {
