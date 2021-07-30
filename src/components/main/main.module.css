@@ -22,10 +22,11 @@
 
 /* List */
 .list {
-  padding: 0 40px;
+  padding: 0 40px 40px;
 }
 
 .list article {
+  box-shadow: 0 0 5px black;
   margin: 0 auto 40px auto;
   max-width: 700px;
   position: relative;
@@ -38,11 +39,14 @@
 }
 
 .list article figure img {
+  border-radius: 6px 6px 0 0;
   width: 100%;
   vertical-align: middle;
 }
 
 .body {
+  background: var(--dark-color);
+  border-radius: 0 0 6px 6px;
   width: 100%;
   padding-top: 5px;
   position: relative;
