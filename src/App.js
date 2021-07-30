@@ -9,8 +9,10 @@ import "./styles.css"
 /**
  * TODO:
  * 
- * filter function 
+ * slideshow to game page, with dot buttons or thumbnails 
  * 
+ * 
+ * filter function (filter via sql)
  * 
  * when closing filter labels, need to refresh data
  * 
@@ -21,12 +23,11 @@ import "./styles.css"
  * 
  * share modal
  * 
+ * make tooltip slider fade instead of slide
+ * 
  * make comments section for list item page.
  * 
  * recently viewed section
- * 
- * BUG: search lists by search term. how to get back to regular list?
- * (home button doesnt refresh because the state data has changed)
  * 
  * Achievements.
  */

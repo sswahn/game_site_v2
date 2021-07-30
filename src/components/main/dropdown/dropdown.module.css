@@ -28,6 +28,7 @@
   right: -210px;
   bottom: 0px;
   width: 200px;
+  z-index: 9999;
 }
 
 .dropdown > div div,

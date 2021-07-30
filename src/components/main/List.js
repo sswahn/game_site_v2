@@ -26,30 +26,7 @@ export default () => {
       return alert(response.error.message)
     }
     */
-    store.set('data', fake_data) 
-
-    context.data.filter(obj => {
-      const category = obj.category.some(category => category.includes(context.filter))
-      const genre = obj.genre.some(genre => genre.includes(context.filter))
-      const platform = obj.platform.some(platform => platform.includes(context.filter))
-      
-      const price = parseFloat(obj.price)
-      // make price filter value a number 5 ... not '$5 or less'
-      const free = price === 'Free to Play'
-      const five_or_less = price < 5
-      const ten_or_less = price < 10
-      const fifteen_or_less = price < 15
-      const twenty_or_less = price < 20
-      const twentyfive_or_less = price < 25
-    })
-
-    // dont filter by context filters array
-    // data updates based on filter string
-    // match filter string against the data category, ex.:
-    // data.filter(obj => obj.genre.some(str => str.includes(filter))
-    // also store filter string in filter array
-    // when removing filter label/btn, remove it from array
-    // then update data with each remaining filter, one by one
+    store.set('data', fake_data)
 
     const data = context.search ? context.search : fake_data //response.message
     dispatch({ type: 'data', payload: data })

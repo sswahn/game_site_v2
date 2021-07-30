@@ -1,4 +1,8 @@
 
+.game {
+  width: 100%;
+}
+
 .game article {
   margin: 0 auto;
   max-width: 800px;
@@ -20,6 +24,7 @@
 
 .header img {
   width: 100%;
+  vertical-align: middle;
 }
 
 .header video {
@@ -42,17 +47,62 @@
   transform: translate(-50%, -50%);
 }
 
+.slides {
+  display: none;
+}
 
-/* all this should be redone,
-  make fonts large
-  move devloper info to its own section
-*/
+.nav {
+  margin: 10px 0;
+  text-align: center;
+}
+
+.nav span {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .nav span:hover {
+  background: #717171;
+}
+
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+
+
+
+
+
 .subheader {
-  background: #444;
   display: flex;
   justify-content: space-between;
   margin-bottom: 40px;
-  padding: 10px;
+  padding: 0 0 10px 10px;
+  position: relative;
+}
+
+.subheader > div:first-of-type {
+  padding-top: 10px;
 }
 
 .subheader p {
@@ -62,12 +112,16 @@
   text-transform: uppercase;
 }
 
-.subheader div button {
+.subheader div p button {
   background: none;
   border: 0;
-  color: orange;
+  color: var(--text-color);
   font-size: 14px;
   margin-left: 5px;
+}
+
+.subheader div p button:hover {
+  text-decoration: underline;
 }
 
 .subheader span {
@@ -76,54 +130,16 @@
   text-transform: capitalize;
 }
 
-.subheader div button:hover {
-  text-decoration: underline;
-}
 
-.subheader div button::after {
+.subheader div p button::after {
   content: ",";
 }
 
-.subheader div button:last-of-type::after {
+.subheader div p button:last-of-type::after {
   content: ""
 }
 
-.subheader div:last-child button {
-  background: forestgreen;
-  border: 0;
-  color: white;
-  display: block;
-  font-weight: bold;
-  height: 40px;
-  text-transform: uppercase;
-  width: 200px;
-}
 
-.subheader div:last-child button:last-child {
-  background: none;
-  text-transform: capitalize;
-  text-decoration: underline;
-}
-.subheader div:last-child button:last-child:hover {
-  background: none;
-}
-
-.subheader div:last-child button:hover {
-  background: darkgreen;
-  text-decoration: none;
-}
-
-.purchase {
-  margin: 20px 0;
-}
-.purchase button {
-  background: forestgreen;
-  border: 0;
-  color: white;
-  font-weight: bold;
-  padding: 15px 0;
-  width: 100%;
-}
 
 
 .tabs {

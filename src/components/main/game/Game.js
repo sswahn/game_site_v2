@@ -33,6 +33,7 @@ export default () => {
       <article>
         <Header data={state.data} />
         <SubHeader data={state.data} />
+        {/* write review conditionally displayed form (if purchased) */}
         <Announcements />
         <Tabs data={state.data} />
         

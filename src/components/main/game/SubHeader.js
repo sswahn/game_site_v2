@@ -1,5 +1,6 @@
 import { useContext } from 'react'
 import { Context } from '../../../Provider'
+import Dropdown from '../dropdown/Dropdown'
 import styles from './game.module.css'
 
 export default ({ data }) => {
@@ -22,14 +23,8 @@ export default ({ data }) => {
         <p>Release date: <span>{data.date}</span></p>
       </div>
       <div>
-        <button id={data.id} onClick={addToCart}>Add to cart</button> 
-        <button>Add to wishlist</button>
+        <Dropdown id={data.id} />
       </div>
     </section>
   )
 }
-
-/**
- * forgot to make image slideshow.
- * break out dev section below with logo and description, link etc
- */
