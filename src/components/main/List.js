@@ -12,6 +12,8 @@ import { faSpinner } from '@fortawesome/free-solid-svg-icons'
 import { faWindows } from '@fortawesome/free-brands-svg-icons'
 import { faApple } from '@fortawesome/free-brands-svg-icons'
 import { faLinux } from '@fortawesome/free-brands-svg-icons'
+import { faAndroid } from '@fortawesome/free-brands-svg-icons'
+import { faGlobe } from '@fortawesome/free-solid-svg-icons'
 
 export default () => {
   const [context, dispatch] = useContext(Context)
@@ -24,9 +26,30 @@ export default () => {
       return alert(response.error.message)
     }
     */
-    store.set('data', fake_data) //response.message
+    store.set('data', fake_data) 
 
-    //const data = context.filter.length ? context.filter.filter()
+    context.data.filter(obj => {
+      const category = obj.category.some(category => category.includes(context.filter))
+      const genre = obj.genre.some(genre => genre.includes(context.filter))
+      const platform = obj.platform.some(platform => platform.includes(context.filter))
+      
+      const price = parseFloat(obj.price)
+      // make price filter value a number 5 ... not '$5 or less'
+      const free = price === 'Free to Play'
+      const five_or_less = price < 5
+      const ten_or_less = price < 10
+      const fifteen_or_less = price < 15
+      const twenty_or_less = price < 20
+      const twentyfive_or_less = price < 25
+    })
+
+    // dont filter by context filters array
+    // data updates based on filter string
+    // match filter string against the data category, ex.:
+    // data.filter(obj => obj.genre.some(str => str.includes(filter))
+    // also store filter string in filter array
+    // when removing filter label/btn, remove it from array
+    // then update data with each remaining filter, one by one
 
     const data = context.search ? context.search : fake_data //response.message
     dispatch({ type: 'data', payload: data })
@@ -68,26 +91,46 @@ export default () => {
   const renderPlatformIcon = os => {
     if (os.includes('Windows')) {
       return (
-        <button key={os} id={os} onClick={filterByPlatform}>
+        <button key={os} id={os} onClick={filterByPlatform} title="Windows">
           <FontAwesomeIcon icon={faWindows} />
         </button>
       )
     }
     if (os.includes('Mac')) {
       return (
-        <button key={os} id={os} onClick={filterByPlatform}>
+        <button key={os} id={os} onClick={filterByPlatform} title="Mac">
           <FontAwesomeIcon icon={faApple} />
         </button>
       )
     }
     if (os.includes('Linux')) {
       return (
-        <button key={os} id={os} onClick={filterByPlatform}>
+        <button key={os} id={os} onClick={filterByPlatform} title="Linux">
           <FontAwesomeIcon icon={faLinux} />
         </button>
       )
     }
-  
+    if (os.includes('Android')) {
+      return (
+        <button key={os} id={os} onClick={filterByPlatform} title="Android">
+          <FontAwesomeIcon icon={faAndroid} />
+        </button>
+      )
+    }
+    if (os.includes('iOS')) {
+      return (
+        <button key={os} id={os} onClick={filterByPlatform} title="iOS">
+          <FontAwesomeIcon icon={faApple} />
+        </button>
+      )
+    }
+    if (os.includes('Web')) {
+      return (
+        <button key={os} id={os} onClick={filterByPlatform} title="Web">
+          <FontAwesomeIcon icon={faGlobe} />
+        </button>
+      )
+    }
   }
 
   return (

@@ -23,6 +23,7 @@ import "./styles.css"
  * 
  * make comments section for list item page.
  * 
+ * recently viewed section
  * 
  * BUG: search lists by search term. how to get back to regular list?
  * (home button doesnt refresh because the state data has changed)

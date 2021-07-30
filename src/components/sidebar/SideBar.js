@@ -71,6 +71,7 @@ export default () => {
           <button onClick={toggleFilter}>Sports &amp; racing</button>
           <button onClick={toggleFilter}>Strategy</button>
           <button onClick={toggleFilter}>Survival</button>
+          <button onClick={toggleFilter}>Virtual Reality</button>
         </div>
         <div>
           <div>Platform</div>

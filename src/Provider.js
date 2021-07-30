@@ -5,7 +5,10 @@ export const Context = createContext()
 export default function Provider({ children }) {
   const data = {
     data: [],
+
     filters: [],
+    filter: undefined,
+
     search: undefined,
     modal: undefined,
     session: undefined,
@@ -15,8 +18,12 @@ export default function Provider({ children }) {
     switch(action.type) {
       case 'data':
         return { ...state, data: action.payload }
+
       case 'filters':
         return { ...state, filters: action.payload }
+      case 'filter':
+        return { ...state, filter: action.payload }
+
       case 'search':
           return { ...state, search: action.payload }
       case 'modal':

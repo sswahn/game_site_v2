@@ -13,3 +13,6 @@ const checkImageSize = event => {
     }                
   }
 }
+
+/** capitalize all words in string (to use on Tags, etc. for filter matching) */
+'your string'.replace(/\b\w/g, l => l.toUpperCase())
