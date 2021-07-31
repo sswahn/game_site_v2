@@ -1,6 +1,6 @@
 
 .main {
-  padding-top: 110px;
+  padding-top: 85px;
 }
 
 .filters {
@@ -10,7 +10,7 @@
 }
 
 .filters div {
-  background: var(--light-color);
+  background: var(--main-color);
   border: 1px solid var(--brightest-color);
   border-radius: 20px;
   cursor: pointer;
@@ -26,8 +26,9 @@
 }
 
 .list article {
-  box-shadow: 0 0 5px black;
-  margin: 0 auto 40px auto;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin: 0 auto 20px auto;
   max-width: 700px;
   position: relative;
   width: 100%;
@@ -39,16 +40,17 @@
 }
 
 .list article figure img {
-  border-radius: 6px 6px 0 0;
+  border-radius: 8px 8px 0 0;
   width: 100%;
   vertical-align: middle;
 }
 
 .body {
-  background: var(--dark-color);
-  border-radius: 0 0 6px 6px;
+  background: var(--main-color);
+  border-radius: 0 0 8px 8px;
   width: 100%;
   padding-top: 5px;
+  padding-bottom: 5px;
   position: relative;
 }
 
@@ -76,6 +78,7 @@
 .platform button {
   background: none;
   border: 0;
+  border-radius: 8px;
   color: var(--text-color);
   font-size: 16px;
   margin: 0 0 0 10px;
@@ -83,7 +86,8 @@
 }
 
 .platform button:hover {
-  background: var(--light-color);
+  box-shadow: 0 1px 2px black;
+  
 }
 
 .list article figure:hover + .tooltip {
@@ -93,7 +97,9 @@
 }
 
 .tooltip {
-  background: var(--brightest-color);
+  background: var(--main-color);
+  border: 1px solid #ccc;
+  border-radius: 8px;
   color: var(--text-color);
   display: none;
   font-size: 12px;
@@ -107,6 +113,7 @@
   z-index: 1;
 }
 
+/*
 .tooltip::after {
   content: "";
   position: absolute;
@@ -115,8 +122,8 @@
   margin-top: -5px;
   border-width: 10px;
   border-style: solid;
-  border-color: transparent var(--brightest-color) transparent transparent;
-}
+  border-color: transparent var(--main-color) transparent transparent;
+}*/
 
 .tooltip h1 {
   margin-bottom: 5px;

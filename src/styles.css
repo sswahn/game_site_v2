@@ -1,8 +1,12 @@
 
 :root {
-  --text-color: white;
-  --dark-color: #222;
-  --light-color: #333;
+  --alt-color: #eee;
+  --main-color: white;
+  --text-color: #222;
+
+  
+  --dark-color: #eee;
+  --light-color: white;
   --bright-color: #444;
   --brightest-color: #555;
 }
@@ -15,7 +19,7 @@
 }
 
 html, body {
-  background: var(--dark-color);
+  background: var(--alt-color);
   color: var(--text-color);
   height: 100%;
   width: 100%;

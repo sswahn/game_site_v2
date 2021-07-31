@@ -21,7 +21,7 @@ export default [
     languages: ["English"],
     eula: "",
     developer: "Horizon's End",
-    developer_logo: "https://d2rwgyv6d24c9f.cloudfront.net/horizonsend-logo-white.png",
+    developer_logo: "https://d2rwgyv6d24c9f.cloudfront.net/horizonsend-logo-black.png",
     date: "Jun 22, 2018",
     date_attribute: "",
     website: "https://horizonsend.com",
@@ -48,12 +48,7 @@ export default [
     ],
     platform: [
       "Windows",
-      "Mac",
-
-      "Linux",
-      "Android",
-      "iOS",
-      "Web"
+      "Mac"
     ],
     tags: []
   },
@@ -74,7 +69,7 @@ export default [
     ],
     trailer: "",
     developer: "Horizon's End",
-    developer_logo: "https://d2rwgyv6d24c9f.cloudfront.net/horizonsend-logo-white.png",
+    developer_logo: "https://d2rwgyv6d24c9f.cloudfront.net/horizonsend-logo-black.png",
     date: "Jun 22, 2022",
     website: "https://horizonsend.com",
     links: [

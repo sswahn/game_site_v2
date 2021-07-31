@@ -9,8 +9,15 @@ import "./styles.css"
 /**
  * TODO:
  * 
+ * tooltip slideshow fade using display code from game page
+ * 
  * slideshow to game page, with dot buttons or thumbnails 
  * 
+ * style sidebar scrollbar
+ *
+ * linkedin "recent" sticky sidebar for recently viewed games
+ *  
+ * give more padding or something to list article body
  * 
  * filter function (filter via sql)
  * 
@@ -22,8 +29,6 @@ import "./styles.css"
  * use floats in header. float logo left, nav right, and center form margin 0 auto 
  * 
  * share modal
- * 
- * make tooltip slider fade instead of slide
  * 
  * make comments section for list item page.
  * 
