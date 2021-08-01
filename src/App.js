@@ -9,6 +9,14 @@ import "./styles.css"
 /**
  * TODO:
  * 
+ * move sidebar to left side (icon too)?
+ * 
+ * profile dropdown: profile, messages
+ * 
+ * make thin list view (fa-list)
+ * 
+ * make game page a full screen modal?
+ * 
  * tooltip slideshow fade using display code from game page
  * 
  * slideshow to game page, with dot buttons or thumbnails 
@@ -34,7 +42,7 @@ import "./styles.css"
  * 
  * recently viewed section
  * 
- * Achievements.
+ * Achievements/badges levels, for purcases, reviews, dev badge etc.
  */
 
 export default () => 

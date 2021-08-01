@@ -4,7 +4,7 @@ import cookie from '../../utilities/Cookies'
 import styles from './header.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUserCircle } from '@fortawesome/free-solid-svg-icons'
-import { faUser } from '@fortawesome/free-solid-svg-icons'
+import { faChevronCircleDown } from '@fortawesome/free-solid-svg-icons'
 
 export default () => {
   const [context, dispatch] = useContext(Context)
@@ -26,7 +26,7 @@ export default () => {
     <div className={styles.login}>
       {context.session 
         ? <button id="upload" className={styles.tooltip} onClick={openModal}>
-            <FontAwesomeIcon icon={faUser} />
+            <FontAwesomeIcon icon={faChevronCircleDown} />
             <span className={styles.tooltiptext}>Profile</span>
           </button>
         : <button id="login" className={styles.tooltip} onClick={openModal}>
