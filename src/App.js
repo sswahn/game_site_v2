@@ -9,7 +9,8 @@ import "./styles.css"
 /**
  * TODO:
  * 
- * move sidebar to left side (icon too)?
+ * make sidebar push page over, and have grid adjust size,
+ * youtube style.
  * 
  * profile dropdown: profile, messages
  * 

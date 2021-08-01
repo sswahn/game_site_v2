@@ -1,7 +1,6 @@
 
 .header {
   background: var(--light-color);
-  border-bottom: 1px solid #ccc;
   display: flex;
   justify-content: space-between;
   padding: 0 25px 0 40px;

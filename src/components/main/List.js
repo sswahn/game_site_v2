@@ -111,31 +111,35 @@ export default () => {
   }
 
   return (
-    <div id="view" className={styles.list}>
+    <div id="view" className={styles.grid}>
       {context.filters.length ? <Filters /> : <></>}
       {!context.data.length ? <FontAwesomeIcon className="loading-icon" icon={faSpinner} /> : context.data.map(game =>
         <article key={game.id} id={game.id}>
           <figure onClick={openListItem} onMouseOver={setHoverState} onMouseOut={setHoverState}>
             <img src={game.logo} alt={game.title} />
           </figure>
-
-          <header className={styles.tooltip}>
-            <h1>{game.title}</h1>
-            <time dateTime={game.date_attribute}>Released: {game.date}</time>
-            {state.hover_state ? <SlideShow images={game.images} /> : <></>}
-            <p>{game.description.short}</p>
-            {/* <p>Rating: <span>{game.rating}</span></p> */}
-            <div className={styles.genre}>{game.genre.map(type => <button key={type} id={type} onClick={filterByGenre}>{type}</button>)}</div>
-          </header>
           
-          <div className={styles.body}>
-            <Dropdown id={game.id} />
+          {/*  tooltip for images?
+          <div>
             <img src={game.developer_logo} alt={game.develper} />
-            <div className={styles.text}>
-              <p>{`$${game.price}`}</p>
-            </div>
+            {state.hover_state ? <SlideShow images={game.images} /> : <></>}
+          </div> 
+          */}
+
+          <header className={styles.header}>
+            <h1>{game.title}</h1>
+            <span>{`$${game.price}`}</span>
+            {/* <p>Rating: <span>{game.rating}</span></p> */}
+            <Dropdown id={game.id} />
+            <time dateTime={game.date_attribute}>Released: {game.date}</time>
+          </header>
+          {/* <div className={styles.body}>
+            <p>{game.description.short}</p>
+          </div> */}
+          <footer>
+            <div className={styles.genre}>{game.genre.map(type => <button key={type} id={type} onClick={filterByGenre}>{type}</button>)}</div>
             <div className={styles.platform}>{game.platform.map(renderPlatformIcon)}</div>
-          </div>
+          </footer>
         </article>
       )}
     </div>

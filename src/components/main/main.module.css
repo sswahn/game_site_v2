@@ -21,11 +21,11 @@
 }
 
 /* List */
-.list {
+.default {
   padding: 0 40px 40px;
 }
 
-.list article {
+.default article {
   border: 1px solid #ccc;
   border-radius: 8px;
   margin: 0 auto 20px auto;
@@ -34,12 +34,12 @@
   width: 100%;
 }
 
-.list article > figure {
+.default article > figure {
   cursor: pointer;
   width: 100%;
 }
 
-.list article figure img {
+.default article figure img {
   border-radius: 8px 8px 0 0;
   width: 100%;
   vertical-align: middle;
@@ -90,7 +90,9 @@
   
 }
 
-.list article figure:hover + .tooltip {
+.grid article figure:hover + .tooltip,
+.list article figure:hover + .tooltip,
+.default article figure:hover + .tooltip {
   display: block;
   opacity: 1;
   transition: display 1s, opacity 1s linear;
@@ -180,43 +182,113 @@
 
 
 
-.grid {
+.list {
+  width: 100%;
+}
+
+.list article {
   display: flex;
+  margin: 0 auto;
+  max-width: 700px;
+  width: 100%;
+}
+
+.list figure img {
+  cursor: pointer;
+  width: 200px;
+}
+
+.list .body {
+  height: 75px;
+}
+
+.list .body > img {
+  max-width: 150px;
+}
+
+.list .platform {
+  bottom: 0;
+}
+
+
+
+.grid {
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   margin-left: 10px;
+
+  height: 3500px;
 }
 
 .grid article {
   margin: 0 15px 20px 15px;
   max-width: 325px;
+  position: relative;
 }
 
 .grid figure img {
+  border-radius: 10px;
   cursor: pointer;
   width: 100%;
 }
 
-.grid .body {
-  height: 75px;
+.header {
+  position: relative;
+  margin: 5px 0;
 }
 
-.grid .body > img {
-  max-width: 150px;
+.header h1 {
+  font-size: 16px;
 }
 
-.grid .platform {
-  bottom: 0;
+.header time {
+  font-size: 12px;
 }
+
+.header span {
+  font-size: 14px;
+  font-weight: bold;
+  position: absolute;
+  top: 0;
+  right: 25px;
+}
+
+.body {
+  background: none;
+}
+
+.body p {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.genre button {
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+.genre button:hover {
+  background: #ccc;
+}
+
+.platform {}
 
 
 @media all and (max-width: 500px) {
-  .list {
+  .default {
     padding: 0;
+  }
+  .body {
+    height: 80px;
   }
   .body img {
     max-width: 100px;
   }
   .platform {
-    bottom: -15px
+    bottom: 5px
   }
 }

@@ -10,7 +10,7 @@
   margin: 0 10px 10px 0;
 }
 
-.mobile form input{
+.mobile form input {
   border: 0;
   outline: none;
   padding: 10px;
@@ -30,18 +30,31 @@
   margin-left: 10px;
 }
 
+.view {
+  display: flex; 
+  direction: ltr;
+}
+
+.view button {
+  width: 25px;
+}
+
 .sidebar {
   background: var(--light-color);
   direction: rtl;
   display: none;
   height: 100%;
   right: 0;
-  overflow-y: scroll;
   padding: 63px 0 10px 10px;
   position: fixed;
   top: 0;
   width: 250px;
   z-index: 999;
+}
+
+.sidebar:hover {
+  overflow-y: auto;
+  padding-left: 7px;
 }
 
 .sidebar div div {
@@ -76,5 +89,27 @@
 }
 
 .sidebar button:hover {
-  background: var(--bright-color);
+  background: var(--alt-color);
+}
+
+
+
+/* width */
+.sidebar::-webkit-scrollbar {
+  width: 3.5px;
+}
+
+/* Track */
+.sidebar::-webkit-scrollbar-track {
+  background: white; 
+}
+ 
+/* Handle */
+.sidebar::-webkit-scrollbar-thumb {
+  background: #555; 
+}
+
+/* Handle on hover */
+.sidebar::-webkit-scrollbar-thumb:hover {
+  background: #444; 
 }

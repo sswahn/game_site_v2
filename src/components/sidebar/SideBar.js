@@ -4,6 +4,8 @@ import MobileMenu from './MobileMenu'
 import styles from './sidebar.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTh } from '@fortawesome/free-solid-svg-icons'
+import { faList } from '@fortawesome/free-solid-svg-icons'
+
 
 export default () => {
   const [context, dispatch] = useContext(Context)
@@ -45,9 +47,12 @@ export default () => {
     <nav id="sidebar" className={styles.sidebar}>
       {window.innerWidth <= 600 ? <MobileMenu /> : <></>}
       {window.innerWidth > 600 
-        ? <div>
+        ? <div className={styles.view}>
             <button onClick={toggleGridView}>
               <FontAwesomeIcon icon={faTh} />
+            </button>
+            <button>
+              <FontAwesomeIcon icon={faList} />
             </button>
           </div>
         : <></>

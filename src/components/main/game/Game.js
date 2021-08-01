@@ -38,7 +38,7 @@ export default () => {
         <Tabs data={state.data} />
         
         <section>
-         {/* meta section, esrb etc. external links (game/dev website), */}
+         {/* meta section, esrb etc. external links (game/dev website), suggested games */}
         </section>
         <section className="reviews">
           <p>Reviews section</p>
